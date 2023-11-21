@@ -50,236 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客撰写模板</title>
-    <url>/2023/10/25/%E6%A8%A1%E6%9D%BF/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="一、博客上传"><a href="#一、博客上传" class="headerlink" title="一、博客上传"></a>一、博客上传</h2><h3 id="创建一个新博客"><a href="#创建一个新博客" class="headerlink" title="创建一个新博客"></a>创建一个新博客</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="预览页面"><a href="#预览页面" class="headerlink" title="预览页面"></a>预览页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="部署到github服务器"><a href="#部署到github服务器" class="headerlink" title="部署到github服务器"></a>部署到github服务器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、删除文章"><a href="#二、删除文章" class="headerlink" title="二、删除文章"></a>二、删除文章</h2><p>删除文章：<br>1、删除文件夹source/_posts下目标文章markdown文件<br>2、删除.deploy_git文件夹<br>3、执行hexo clean后，再执行hexo g，hexo d 即可</p>
-<h2 id="三、markdown文件编辑"><a href="#三、markdown文件编辑" class="headerlink" title="三、markdown文件编辑"></a>三、markdown文件编辑</h2><h3 id="3-1文件头"><a href="#3-1文件头" class="headerlink" title="3.1文件头"></a>3.1文件头</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 博客撰写模板
-date: <span class="token number">2023</span>-10-25 <span class="token number">10</span>:48:20
-description:
-tags:
-  - Hexo
-  - 博客撰写
-categories:
-  - Hexo
-  - 博客撰写
-mathjax: <span class="token boolean">true</span>
-sticky: <span class="token number">999</span>    <span class="token comment">#置顶</span>
-license: all_rights_reserved
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-2数学公式写法："><a href="#3-2数学公式写法：" class="headerlink" title="3.2数学公式写法："></a>3.2数学公式写法：</h3><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$
-i<span class="token equation-command regex">\hbar</span><span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\partial</span>}{<span class="token equation-command regex">\partial</span> t}<span class="token equation-command regex">\psi</span>=-<span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\hbar</span>^2}{2m}<span class="token equation-command regex">\nabla</span>^2<span class="token equation-command regex">\psi</span>+V<span class="token equation-command regex">\psi</span>
-$$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="25.832ex" height="5.018ex" role="img" focusable="false" viewBox="0 -1509.9 11417.6 2217.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(345,0)"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mfrac" transform="translate(907,0)"><g data-mml-node="mi" transform="translate(400.5,676)"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g></g><rect width="1127" height="60" x="120" y="220"></rect></g><g data-mml-node="mi" transform="translate(2274,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(3202.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(4258.6,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(5036.6,0)"><g data-mml-node="msup" transform="translate(384.2,676)"><g data-mml-node="mi"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mn" transform="translate(646.1,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><rect width="1578" height="60" x="120" y="220"></rect></g><g data-mml-node="msup" transform="translate(6854.6,0)"><g data-mml-node="mi"><path data-c="2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"></path></g><g data-mml-node="mn" transform="translate(866,413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mi" transform="translate(8124.1,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(8997.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(9997.6,0)"><path data-c="1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path></g><g data-mml-node="mi" transform="translate(10766.6,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g></g></g></svg></mjx-container></p>
-<h3 id="3-3图片文件："><a href="#3-3图片文件：" class="headerlink" title="3.3图片文件："></a>3.3图片文件：</h3><p>比如你放在 同名字文件夹中的 <code>test.png</code> 图片，你可以这样引用</p>
-<p><code>![Test](test.png)</code><br><img src="/2023/10/25/%E6%A8%A1%E6%9D%BF/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/test.png" alt="Test"></p>
-<ul>
-<li>line1</li>
-<li>line2</li>
-</ul>
-<h3 id="3-6代码"><a href="#3-6代码" class="headerlink" title="3.6代码"></a>3.6代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">&lt;language&gt;</span>
-<span class="token code-block language-language">context</span>
-<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-7表格"><a href="#3-7表格" class="headerlink" title="3.7表格"></a>3.7表格</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 操作符及运算 </span><span class="token punctuation">|</span><span class="token table-header important"> 描述                                         </span><span class="token punctuation">|</span>
-</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------------</span> <span class="token punctuation">|</span> <span class="token punctuation">--------------------------------------------</span> <span class="token punctuation">|</span>
-</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> S-T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括在S内但不包含在T内的元素 </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S&amp;T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括同时在S和T内的元素       </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S^T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T中非共同元素         </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S\|T         </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T所有元素             </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<table>
-<thead>
-<tr>
-<th>操作符及运算</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S-T</td>
-<td>返回一个新集合，包括在S内但不包含在T内的元素</td>
-</tr>
-<tr>
-<td>S&amp;T</td>
-<td>返回一个新集合，包括同时在S和T内的元素</td>
-</tr>
-<tr>
-<td>S^T</td>
-<td>返回一个新集合，包括S和T中非共同元素</td>
-</tr>
-<tr>
-<td>S|T</td>
-<td>返回一个新集合，包括S和T所有元素</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客撰写</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LabView</title>
-    <url>/2023/11/21/Labview/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="一、博客上传"><a href="#一、博客上传" class="headerlink" title="一、博客上传"></a>一、博客上传</h2><h3 id="创建一个新博客"><a href="#创建一个新博客" class="headerlink" title="创建一个新博客"></a>创建一个新博客</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="预览页面"><a href="#预览页面" class="headerlink" title="预览页面"></a>预览页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="部署到github服务器"><a href="#部署到github服务器" class="headerlink" title="部署到github服务器"></a>部署到github服务器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、删除文章"><a href="#二、删除文章" class="headerlink" title="二、删除文章"></a>二、删除文章</h2><p>删除文章：<br>1、删除文件夹source/_posts下目标文章markdown文件<br>2、删除.deploy_git文件夹<br>3、执行hexo clean后，再执行hexo g，hexo d 即可</p>
-<h2 id="三、markdown文件编辑"><a href="#三、markdown文件编辑" class="headerlink" title="三、markdown文件编辑"></a>三、markdown文件编辑</h2><h3 id="3-1文件头"><a href="#3-1文件头" class="headerlink" title="3.1文件头"></a>3.1文件头</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 博客撰写模板
-date: <span class="token number">2023</span>-10-25 <span class="token number">10</span>:48:20
-description:
-tags:
-  - Hexo
-  - 博客撰写
-categories:
-  - Hexo
-  - 博客撰写
-mathjax: <span class="token boolean">true</span>
-sticky: <span class="token number">999</span>    <span class="token comment">#置顶</span>
-license: all_rights_reserved
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-2数学公式写法："><a href="#3-2数学公式写法：" class="headerlink" title="3.2数学公式写法："></a>3.2数学公式写法：</h3><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$
-i<span class="token equation-command regex">\hbar</span><span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\partial</span>}{<span class="token equation-command regex">\partial</span> t}<span class="token equation-command regex">\psi</span>=-<span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\hbar</span>^2}{2m}<span class="token equation-command regex">\nabla</span>^2<span class="token equation-command regex">\psi</span>+V<span class="token equation-command regex">\psi</span>
-$$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="25.832ex" height="5.018ex" role="img" focusable="false" viewBox="0 -1509.9 11417.6 2217.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(345,0)"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mfrac" transform="translate(907,0)"><g data-mml-node="mi" transform="translate(400.5,676)"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g></g><rect width="1127" height="60" x="120" y="220"></rect></g><g data-mml-node="mi" transform="translate(2274,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(3202.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(4258.6,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(5036.6,0)"><g data-mml-node="msup" transform="translate(384.2,676)"><g data-mml-node="mi"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mn" transform="translate(646.1,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><rect width="1578" height="60" x="120" y="220"></rect></g><g data-mml-node="msup" transform="translate(6854.6,0)"><g data-mml-node="mi"><path data-c="2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"></path></g><g data-mml-node="mn" transform="translate(866,413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mi" transform="translate(8124.1,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(8997.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(9997.6,0)"><path data-c="1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path></g><g data-mml-node="mi" transform="translate(10766.6,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g></g></g></svg></mjx-container></p>
-<h3 id="3-3图片文件："><a href="#3-3图片文件：" class="headerlink" title="3.3图片文件："></a>3.3图片文件：</h3><p>比如你放在 同名字文件夹中的 <code>test.png</code> 图片，你可以这样引用</p>
-<p><code>![Test](test.png)</code><br><img src="/2023/11/21/Labview/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/test.png" alt="Test"></p>
-<ul>
-<li>line1</li>
-<li>line2</li>
-</ul>
-<h3 id="3-6代码"><a href="#3-6代码" class="headerlink" title="3.6代码"></a>3.6代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">&lt;language&gt;</span>
-<span class="token code-block language-language">context</span>
-<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-7表格"><a href="#3-7表格" class="headerlink" title="3.7表格"></a>3.7表格</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 操作符及运算 </span><span class="token punctuation">|</span><span class="token table-header important"> 描述                                         </span><span class="token punctuation">|</span>
-</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------------</span> <span class="token punctuation">|</span> <span class="token punctuation">--------------------------------------------</span> <span class="token punctuation">|</span>
-</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> S-T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括在S内但不包含在T内的元素 </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S&amp;T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括同时在S和T内的元素       </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S^T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T中非共同元素         </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> S\|T         </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T所有元素             </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<table>
-<thead>
-<tr>
-<th>操作符及运算</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S-T</td>
-<td>返回一个新集合，包括在S内但不包含在T内的元素</td>
-</tr>
-<tr>
-<td>S&amp;T</td>
-<td>返回一个新集合，包括同时在S和T内的元素</td>
-</tr>
-<tr>
-<td>S^T</td>
-<td>返回一个新集合，包括S和T中非共同元素</td>
-</tr>
-<tr>
-<td>S|T</td>
-<td>返回一个新集合，包括S和T所有元素</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Labview</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>Labview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python基础-2基本语法元素</title>
-    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-2%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<h1 id="基本语法元素"><a href="#基本语法元素" class="headerlink" title="基本语法元素"></a>基本语法元素</h1><ul>
-<li><p>缩进，Tab/四个空格</p>
-</li>
-<li><p>续行符：\</p>
-</li>
-<li><p>考察：False、True、and、as、break、continue、def、del、elif、else、except、for、from、global、if、import、in、not、or、return、try、while</p>
-</li>
-</ul>
-<h2 id="字符串类型的使用"><a href="#字符串类型的使用" class="headerlink" title="字符串类型的使用"></a>字符串类型的使用</h2><p>1.可正可负[]<br>2.可表示区间（切片操作）[N,M]</p>
-<h2 id="引用import"><a href="#引用import" class="headerlink" title="引用import"></a>引用import</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> turtle
-turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">200</span><span class="token punctuation">)</span>
-turtle<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span>
-turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="基本输入输出语句"><a href="#基本输入输出语句" class="headerlink" title="基本输入输出语句"></a>基本输入输出语句</h2><p>1.input（”提示性文字”）<br>2.eval（”字符串”）#去掉字符串左右的引号<br>3.<br>  1.print（变量1，变量2，变量3……)#每个变量间用一个空格分开。<br>  2.print（“数字1{}数字2{}字符1{}”.format(a,b,c)）#混合输出的情况<br>  3.print（a，end=‘%’）#句尾加%输出结尾</p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python基础-4程序的控制结构</title>
-    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-4%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h1 id="4-3循环结构"><a href="#4-3循环结构" class="headerlink" title="4.3循环结构"></a>4.3循环结构</h1><h4 id="4-3-1for"><a href="#4-3-1for" class="headerlink" title="4.3.1for"></a>4.3.1for</h4><p>  for &lt;循环变量&gt; in &lt;遍历结构&gt;:<br>      &lt;程序块1&gt;<br>  else:<br>      &lt;程序块2&gt;</p>
-<ul>
-<li>&lt;遍历结构&gt;可为 range(n)意为循环n次</li>
-<li>for正常执行后才执行else，所以可放入评价循环执行情况的语句</li>
-</ul>
-<h4 id="4-3-2while"><a href="#4-3-2while" class="headerlink" title="4.3.2while"></a>4.3.2while</h4><p>while &lt;条件&gt;:<br>    &lt;语句块1&gt;<br>else:<br>    &lt;语句块2&gt;</p>
-<h4 id="4-3-3break-continue"><a href="#4-3-3break-continue" class="headerlink" title="4.3.3break&continue"></a>4.3.3break&amp;continue</h4><ul>
-<li>break()</li>
-<li>continue()</li>
-</ul>
-<h1 id="4-4异常处理"><a href="#4-4异常处理" class="headerlink" title="4.4异常处理"></a>4.4异常处理</h1><p>try:<br>    &lt;语句块1&gt;<br>except:<br>    &lt;语句块2&gt;</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">/</span>i<span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
-<span class="token keyword">except</span> ZeroDivisionError：
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"除数为0，错误"</span><span class="token punctuation">)</span>
-<span class="token keyword">except</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"某种错误出现"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python基础-10第三方库</title>
     <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-10%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</url>
     <content><![CDATA[<h1 id="pyinstaller"><a href="#pyinstaller" class="headerlink" title="pyinstaller"></a>pyinstaller</h1><ul>
@@ -411,31 +181,91 @@ wordcloud<span class="token punctuation">.</span>to_file<span class="token punct
       </tags>
   </entry>
   <entry>
-    <title>python基础-5函数和代码复用</title>
-    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-5%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="5-1函数的基本使用"><a href="#5-1函数的基本使用" class="headerlink" title="5.1函数的基本使用"></a>5.1函数的基本使用</h1><h4 id="5-1-1函数的定义"><a href="#5-1-1函数的定义" class="headerlink" title="5.1.1函数的定义"></a>5.1.1函数的定义</h4><p>def &lt;函数名&gt;(&lt;参数列表&gt;)：<br>    &lt;函数体&gt;<br>    return &lt;返回值列表&gt;</p>
-<h4 id="5-1-2函数的调用"><a href="#5-1-2函数的调用" class="headerlink" title="5.1.2函数的调用"></a>5.1.2函数的调用</h4><p>&lt;函数名&gt;(&lt;实际赋值参数列表&gt;)</p>
-<h1 id="5-2函数的参数传递"><a href="#5-2函数的参数传递" class="headerlink" title="5.2函数的参数传递"></a>5.2函数的参数传递</h1><h4 id="5-2-1可选参数传递"><a href="#5-2-1可选参数传递" class="headerlink" title="5.2.1可选参数传递"></a>5.2.1可选参数传递</h4><p>缺省</p>
-<ul>
-<li>可选参数一般放置在非可选参数的后面</li>
-</ul>
-<h4 id="5-2-2参数名称传递"><a href="#5-2-2参数名称传递" class="headerlink" title="5.2.2参数名称传递"></a>5.2.2参数名称传递</h4><ul>
-<li>默认以位置顺序传参数</li>
-<li>也可按照参数名称传参数</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">multiply<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token number">99</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <title>LabView</title>
+    <url>/2023/11/21/Labview/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="一、博客上传"><a href="#一、博客上传" class="headerlink" title="一、博客上传"></a>一、博客上传</h2><h3 id="创建一个新博客"><a href="#创建一个新博客" class="headerlink" title="创建一个新博客"></a>创建一个新博客</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h1 id="5-3变量的作用域"><a href="#5-3变量的作用域" class="headerlink" title="5.3变量的作用域"></a>5.3变量的作用域</h1><ul>
-<li>局部变量</li>
-<li>全局变量</li>
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="预览页面"><a href="#预览页面" class="headerlink" title="预览页面"></a>预览页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="部署到github服务器"><a href="#部署到github服务器" class="headerlink" title="部署到github服务器"></a>部署到github服务器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、删除文章"><a href="#二、删除文章" class="headerlink" title="二、删除文章"></a>二、删除文章</h2><p>删除文章：<br>1、删除文件夹source/_posts下目标文章markdown文件<br>2、删除.deploy_git文件夹<br>3、执行hexo clean后，再执行hexo g，hexo d 即可</p>
+<h2 id="三、markdown文件编辑"><a href="#三、markdown文件编辑" class="headerlink" title="三、markdown文件编辑"></a>三、markdown文件编辑</h2><h3 id="3-1文件头"><a href="#3-1文件头" class="headerlink" title="3.1文件头"></a>3.1文件头</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 博客撰写模板
+date: <span class="token number">2023</span>-10-25 <span class="token number">10</span>:48:20
+description:
+tags:
+  - Hexo
+  - 博客撰写
+categories:
+  - Hexo
+  - 博客撰写
+mathjax: <span class="token boolean">true</span>
+sticky: <span class="token number">999</span>    <span class="token comment">#置顶</span>
+license: all_rights_reserved
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2数学公式写法："><a href="#3-2数学公式写法：" class="headerlink" title="3.2数学公式写法："></a>3.2数学公式写法：</h3><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$
+i<span class="token equation-command regex">\hbar</span><span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\partial</span>}{<span class="token equation-command regex">\partial</span> t}<span class="token equation-command regex">\psi</span>=-<span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\hbar</span>^2}{2m}<span class="token equation-command regex">\nabla</span>^2<span class="token equation-command regex">\psi</span>+V<span class="token equation-command regex">\psi</span>
+$$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="25.832ex" height="5.018ex" role="img" focusable="false" viewBox="0 -1509.9 11417.6 2217.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(345,0)"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mfrac" transform="translate(907,0)"><g data-mml-node="mi" transform="translate(400.5,676)"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g></g><rect width="1127" height="60" x="120" y="220"></rect></g><g data-mml-node="mi" transform="translate(2274,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(3202.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(4258.6,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(5036.6,0)"><g data-mml-node="msup" transform="translate(384.2,676)"><g data-mml-node="mi"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mn" transform="translate(646.1,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><rect width="1578" height="60" x="120" y="220"></rect></g><g data-mml-node="msup" transform="translate(6854.6,0)"><g data-mml-node="mi"><path data-c="2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"></path></g><g data-mml-node="mn" transform="translate(866,413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mi" transform="translate(8124.1,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(8997.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(9997.6,0)"><path data-c="1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path></g><g data-mml-node="mi" transform="translate(10766.6,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g></g></g></svg></mjx-container></p>
+<h3 id="3-3图片文件："><a href="#3-3图片文件：" class="headerlink" title="3.3图片文件："></a>3.3图片文件：</h3><p>比如你放在 同名字文件夹中的 <code>test.png</code> 图片，你可以这样引用</p>
+<p><code>![Test](test.png)</code><br><img src="/2023/11/21/Labview/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/test.png" alt="Test"></p>
+<ul>
+<li>line1</li>
+<li>line2</li>
 </ul>
-<h1 id="5-4代码复用"><a href="#5-4代码复用" class="headerlink" title="5.4代码复用"></a>5.4代码复用</h1><p>高内聚（紧耦合），低耦合（松耦合）</p>
+<h3 id="3-6代码"><a href="#3-6代码" class="headerlink" title="3.6代码"></a>3.6代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">&lt;language&gt;</span>
+<span class="token code-block language-language">context</span>
+<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-7表格"><a href="#3-7表格" class="headerlink" title="3.7表格"></a>3.7表格</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 操作符及运算 </span><span class="token punctuation">|</span><span class="token table-header important"> 描述                                         </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------------</span> <span class="token punctuation">|</span> <span class="token punctuation">--------------------------------------------</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> S-T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括在S内但不包含在T内的元素 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S&amp;T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括同时在S和T内的元素       </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S^T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T中非共同元素         </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S\|T         </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T所有元素             </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>操作符及运算</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S-T</td>
+<td>返回一个新集合，包括在S内但不包含在T内的元素</td>
+</tr>
+<tr>
+<td>S&amp;T</td>
+<td>返回一个新集合，包括同时在S和T内的元素</td>
+</tr>
+<tr>
+<td>S^T</td>
+<td>返回一个新集合，包括S和T中非共同元素</td>
+</tr>
+<tr>
+<td>S|T</td>
+<td>返回一个新集合，包括S和T所有元素</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>Labview</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>编程</tag>
+        <tag>Labview</tag>
       </tags>
   </entry>
   <entry>
@@ -530,6 +360,88 @@ wordcloud<span class="token punctuation">.</span>to_file<span class="token punct
 <span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
 <span class="token builtin">float</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
 <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python基础-4程序的控制结构</title>
+    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-4%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h1 id="4-3循环结构"><a href="#4-3循环结构" class="headerlink" title="4.3循环结构"></a>4.3循环结构</h1><h4 id="4-3-1for"><a href="#4-3-1for" class="headerlink" title="4.3.1for"></a>4.3.1for</h4><p>  for &lt;循环变量&gt; in &lt;遍历结构&gt;:<br>      &lt;程序块1&gt;<br>  else:<br>      &lt;程序块2&gt;</p>
+<ul>
+<li>&lt;遍历结构&gt;可为 range(n)意为循环n次</li>
+<li>for正常执行后才执行else，所以可放入评价循环执行情况的语句</li>
+</ul>
+<h4 id="4-3-2while"><a href="#4-3-2while" class="headerlink" title="4.3.2while"></a>4.3.2while</h4><p>while &lt;条件&gt;:<br>    &lt;语句块1&gt;<br>else:<br>    &lt;语句块2&gt;</p>
+<h4 id="4-3-3break-continue"><a href="#4-3-3break-continue" class="headerlink" title="4.3.3break&continue"></a>4.3.3break&amp;continue</h4><ul>
+<li>break()</li>
+<li>continue()</li>
+</ul>
+<h1 id="4-4异常处理"><a href="#4-4异常处理" class="headerlink" title="4.4异常处理"></a>4.4异常处理</h1><p>try:<br>    &lt;语句块1&gt;<br>except:<br>    &lt;语句块2&gt;</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">/</span>i<span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ZeroDivisionError：
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"除数为0，错误"</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"某种错误出现"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python基础-2基本语法元素</title>
+    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-2%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h1 id="基本语法元素"><a href="#基本语法元素" class="headerlink" title="基本语法元素"></a>基本语法元素</h1><ul>
+<li><p>缩进，Tab/四个空格</p>
+</li>
+<li><p>续行符：\</p>
+</li>
+<li><p>考察：False、True、and、as、break、continue、def、del、elif、else、except、for、from、global、if、import、in、not、or、return、try、while</p>
+</li>
+</ul>
+<h2 id="字符串类型的使用"><a href="#字符串类型的使用" class="headerlink" title="字符串类型的使用"></a>字符串类型的使用</h2><p>1.可正可负[]<br>2.可表示区间（切片操作）[N,M]</p>
+<h2 id="引用import"><a href="#引用import" class="headerlink" title="引用import"></a>引用import</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> turtle
+turtle<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">200</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>right<span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">)</span>
+turtle<span class="token punctuation">.</span>circle<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="基本输入输出语句"><a href="#基本输入输出语句" class="headerlink" title="基本输入输出语句"></a>基本输入输出语句</h2><p>1.input（”提示性文字”）<br>2.eval（”字符串”）#去掉字符串左右的引号<br>3.<br>  1.print（变量1，变量2，变量3……)#每个变量间用一个空格分开。<br>  2.print（“数字1{}数字2{}字符1{}”.format(a,b,c)）#混合输出的情况<br>  3.print（a，end=‘%’）#句尾加%输出结尾</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python基础-5函数和代码复用</title>
+    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-5%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="5-1函数的基本使用"><a href="#5-1函数的基本使用" class="headerlink" title="5.1函数的基本使用"></a>5.1函数的基本使用</h1><h4 id="5-1-1函数的定义"><a href="#5-1-1函数的定义" class="headerlink" title="5.1.1函数的定义"></a>5.1.1函数的定义</h4><p>def &lt;函数名&gt;(&lt;参数列表&gt;)：<br>    &lt;函数体&gt;<br>    return &lt;返回值列表&gt;</p>
+<h4 id="5-1-2函数的调用"><a href="#5-1-2函数的调用" class="headerlink" title="5.1.2函数的调用"></a>5.1.2函数的调用</h4><p>&lt;函数名&gt;(&lt;实际赋值参数列表&gt;)</p>
+<h1 id="5-2函数的参数传递"><a href="#5-2函数的参数传递" class="headerlink" title="5.2函数的参数传递"></a>5.2函数的参数传递</h1><h4 id="5-2-1可选参数传递"><a href="#5-2-1可选参数传递" class="headerlink" title="5.2.1可选参数传递"></a>5.2.1可选参数传递</h4><p>缺省</p>
+<ul>
+<li>可选参数一般放置在非可选参数的后面</li>
+</ul>
+<h4 id="5-2-2参数名称传递"><a href="#5-2-2参数名称传递" class="headerlink" title="5.2.2参数名称传递"></a>5.2.2参数名称传递</h4><ul>
+<li>默认以位置顺序传参数</li>
+<li>也可按照参数名称传参数</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">multiply<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token number">99</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h1 id="5-3变量的作用域"><a href="#5-3变量的作用域" class="headerlink" title="5.3变量的作用域"></a>5.3变量的作用域</h1><ul>
+<li>局部变量</li>
+<li>全局变量</li>
+</ul>
+<h1 id="5-4代码复用"><a href="#5-4代码复用" class="headerlink" title="5.4代码复用"></a>5.4代码复用</h1><p>高内聚（紧耦合），低耦合（松耦合）</p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -818,6 +730,49 @@ wordcloud<span class="token punctuation">.</span>to_file<span class="token punct
 <td align="left">删除所有键值对，清空字典</td>
 </tr>
 </tbody></table>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python基础-8程序设计</title>
+    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<h1 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gerhtmllines</span><span class="token punctuation">(</span>htmlpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span>hemlpath<span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+    <span class="token keyword">is</span><span class="token operator">=</span>f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">is</span>
+<span class="token keyword">def</span> <span class="token function">extractimageurls</span><span class="token punctuation">(</span>htmllist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    urls<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> htmllist<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token string">'img'</span> <span class="token keyword">in</span> line<span class="token punctuation">:</span>
+            url<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'src='</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'"'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> <span class="token string">'http'</span> <span class="token keyword">in</span> url<span class="token punctuation">:</span>
+                urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> urls
+<span class="token keyword">def</span> show results<span class="token punctuation">(</span>urls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    count<span class="token operator">=</span><span class="token number">0</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第{:2}个URL：{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        count<span class="token operator">+=</span><span class="token number">1</span>
+<span class="token keyword">def</span> <span class="token function">saveresults</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>urls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
+        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>url<span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    inputfile<span class="token operator">=</span><span class="token string">'nationalgeographic.html'</span>
+    outputfile<span class="token operator">=</span><span class="token string">'nationalgeographic-urls.txt'</span>
+    htmllines<span class="token operator">=</span>gethtmllines<span class="token punctuation">(</span>inputfile<span class="token punctuation">)</span>
+    imageurls<span class="token operator">=</span>extractimageurls<span class="token punctuation">(</span>htmllines<span class="token punctuation">)</span>
+    showresults<span class="token punctuation">(</span>imageurls<span class="token punctuation">)</span>
+    saveresults<span class="token punctuation">(</span>outputfile<span class="token punctuation">,</span>imageurls<span class="token punctuation">)</span>
+main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 ]]></content>
       <categories>
         <category>Python</category>
@@ -1205,49 +1160,6 @@ p<span class="token punctuation">.</span>circle<span class="token punctuation">(
       </tags>
   </entry>
   <entry>
-    <title>python基础-8程序设计</title>
-    <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[<h1 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">gerhtmllines</span><span class="token punctuation">(</span>htmlpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span>hemlpath<span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-    <span class="token keyword">is</span><span class="token operator">=</span>f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token keyword">is</span>
-<span class="token keyword">def</span> <span class="token function">extractimageurls</span><span class="token punctuation">(</span>htmllist<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    urls<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> line <span class="token keyword">in</span> htmllist<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token string">'img'</span> <span class="token keyword">in</span> line<span class="token punctuation">:</span>
-            url<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'src='</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'"'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-            <span class="token keyword">if</span> <span class="token string">'http'</span> <span class="token keyword">in</span> url<span class="token punctuation">:</span>
-                urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> urls
-<span class="token keyword">def</span> show results<span class="token punctuation">(</span>urls<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    count<span class="token operator">=</span><span class="token number">0</span>
-    <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第{:2}个URL：{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>count<span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        count<span class="token operator">+=</span><span class="token number">1</span>
-<span class="token keyword">def</span> <span class="token function">saveresults</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>urls<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    f<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
-        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>url<span class="token operator">+</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
-    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    inputfile<span class="token operator">=</span><span class="token string">'nationalgeographic.html'</span>
-    outputfile<span class="token operator">=</span><span class="token string">'nationalgeographic-urls.txt'</span>
-    htmllines<span class="token operator">=</span>gethtmllines<span class="token punctuation">(</span>inputfile<span class="token punctuation">)</span>
-    imageurls<span class="token operator">=</span>extractimageurls<span class="token punctuation">(</span>htmllines<span class="token punctuation">)</span>
-    showresults<span class="token punctuation">(</span>imageurls<span class="token punctuation">)</span>
-    saveresults<span class="token punctuation">(</span>outputfile<span class="token punctuation">,</span>imageurls<span class="token punctuation">)</span>
-main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python基础-7文件与格式化</title>
     <url>/2023/10/25/Python/python%E5%9F%BA%E7%A1%80-7%E6%96%87%E4%BB%B6%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96/</url>
     <content><![CDATA[<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h4 id="一、文件打开和关闭"><a href="#一、文件打开和关闭" class="headerlink" title="一、文件打开和关闭"></a>一、文件打开和关闭</h4><h5 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h5><p>&lt;变量名&gt;=open(&lt;文件路径及文件名&gt;,&lt;打开模式&gt;)</p>
@@ -1326,99 +1238,6 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-1.3特殊矩阵</title>
-    <url>/2023/10/25/Matlab/1.3%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h1 id="特殊矩阵"><a href="#特殊矩阵" class="headerlink" title="特殊矩阵"></a>特殊矩阵</h1><p>1.zeros():产生零矩阵<br>2.ones():产生全为1的矩阵<br>3.eye():产生对角线全为1的矩阵<br>4.rand():产生(0,1)均匀分布的随机矩阵<br>5.randn()产生均值为0,方差为1的标准正态分布随机矩阵</p>
-<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><ul>
-<li>zeros(m)<strong>:m*m的方阵</strong></li>
-<li>zeros(m*n)<strong>:m*n的矩阵</strong></li>
-<li>zeros(size(A))<strong>:与A相同大小的矩阵</strong></li>
-</ul>
-<h2 id="专门学科的特殊矩阵"><a href="#专门学科的特殊矩阵" class="headerlink" title="专门学科的特殊矩阵"></a>专门学科的特殊矩阵</h2><p>1.magic(n)魔方阵，由1~n^2共n^2个整数组成，且每行每列及主副对角线上各元素之和都相等<br>2.vander(V)范德蒙矩阵(重用在通信系统的纠错编码中)</p>
-<p><img src="/images/matlab/%E8%8C%83%E5%BE%B7%E8%92%99%E7%9F%A9%E9%98%B5.png"></p>
-<p>3.hilb(n)希尔伯特矩阵</p>
-<p><img src="/images/matlab/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E7%9F%A9%E9%98%B5.png"></p>
-<p>4.compan(p)多项式的伴随矩阵</p>
-<p><img src="/images/matlab/%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5.png"></p>
-<p>5.pascal(n)帕斯卡矩阵</p>
-<p><img src="/images/matlab/%E5%B8%95%E6%96%AF%E5%8D%A1%E7%9F%A9%E9%98%B5.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-1.4字符串处理</title>
-    <url>/2023/10/25/Matlab/1.4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><h2 id="字符串的执行-类比python"><a href="#字符串的执行-类比python" class="headerlink" title="字符串的执行(类比python)"></a>字符串的执行(类比python)</h2><pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">eval</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="字符串与数值之间的转换"><a href="#字符串与数值之间的转换" class="headerlink" title="字符串与数值之间的转换"></a>字符串与数值之间的转换</h2><p>1.abs和double可以用来获取字符串矩阵中对应ASCLL码数值矩阵<br>2.char()可以把ASCALL码矩阵转换为字符串</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">s1<span class="token operator">=</span><span class="token string">'MATLAB'</span>
-a<span class="token operator">=</span><span class="token function">abs</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
-<span class="token function">char</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token number">32</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><p>  1.关系运算符(从左至右依次比较)           <strong>(返回为一个向量)</strong><br>  2.比较函数                                                 <strong>(返回为一个值0/1)</strong></p>
-  <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">strcmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等
-<span class="token function">strncmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串前n个字符是否相等
-<span class="token function">strcmpi</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等<span class="token punctuation">(</span>忽略大小写<span class="token punctuation">)</span>
-<span class="token function">strncmpi</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等<span class="token punctuation">(</span>忽略大小写<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="查找替换"><a href="#查找替换" class="headerlink" title="查找替换"></a>查找替换</h2>  <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">findstr</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span>返回短字符串再行字符串中的开始位置
-<span class="token function">strrep</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>s3<span class="token punctuation">)</span>将s1中的所有子字符串s2替换为s3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-1.2基本运算</title>
-    <url>/2023/10/25/Matlab/1.2%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<h1 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h1><h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><ul>
-<li>+ - * ^ \(左除) /(右除)</li>
-</ul>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">\</span>B<span class="token operator">==</span><span class="token function">inv</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token operator">*</span>B
-B<span class="token operator">/</span>A<span class="token operator">==</span>B<span class="token operator">*</span><span class="token function">inv</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>**.**点乘运算(对应元素相乘)</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">.*</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h2 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h2><ul>
-<li>&gt;    &lt;     </li>
-<li>&gt;=     &lt;=   </li>
-<li>==    ~=(不等于)</li>
-</ul>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><ul>
-<li>&amp;与</li>
-<li>| 或</li>
-<li>~非</li>
-</ul>
-<h2 id="取整运算"><a href="#取整运算" class="headerlink" title="取整运算"></a>取整运算</h2><ul>
-<li>fix()<strong>取正数</strong></li>
-<li>floor()<strong>向下取</strong></li>
-<li>ceil()<strong>向上取</strong></li>
-<li>round()<strong>四舍五入</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab基础-1.1矩阵</title>
     <url>/2023/10/25/Matlab/1.1%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><h2 id="矩阵的建立"><a href="#矩阵的建立" class="headerlink" title="矩阵的建立"></a>矩阵的建立</h2><ul>
@@ -1483,6 +1302,187 @@ A重排为m<span class="token operator">*</span>n矩阵<span aria-hidden="true" 
       </tags>
   </entry>
   <entry>
+    <title>Matlab基础-1.3特殊矩阵</title>
+    <url>/2023/10/25/Matlab/1.3%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h1 id="特殊矩阵"><a href="#特殊矩阵" class="headerlink" title="特殊矩阵"></a>特殊矩阵</h1><p>1.zeros():产生零矩阵<br>2.ones():产生全为1的矩阵<br>3.eye():产生对角线全为1的矩阵<br>4.rand():产生(0,1)均匀分布的随机矩阵<br>5.randn()产生均值为0,方差为1的标准正态分布随机矩阵</p>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><ul>
+<li>zeros(m)<strong>:m*m的方阵</strong></li>
+<li>zeros(m*n)<strong>:m*n的矩阵</strong></li>
+<li>zeros(size(A))<strong>:与A相同大小的矩阵</strong></li>
+</ul>
+<h2 id="专门学科的特殊矩阵"><a href="#专门学科的特殊矩阵" class="headerlink" title="专门学科的特殊矩阵"></a>专门学科的特殊矩阵</h2><p>1.magic(n)魔方阵，由1~n^2共n^2个整数组成，且每行每列及主副对角线上各元素之和都相等<br>2.vander(V)范德蒙矩阵(重用在通信系统的纠错编码中)</p>
+<p><img src="/images/matlab/%E8%8C%83%E5%BE%B7%E8%92%99%E7%9F%A9%E9%98%B5.png"></p>
+<p>3.hilb(n)希尔伯特矩阵</p>
+<p><img src="/images/matlab/%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E7%9F%A9%E9%98%B5.png"></p>
+<p>4.compan(p)多项式的伴随矩阵</p>
+<p><img src="/images/matlab/%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5.png"></p>
+<p>5.pascal(n)帕斯卡矩阵</p>
+<p><img src="/images/matlab/%E5%B8%95%E6%96%AF%E5%8D%A1%E7%9F%A9%E9%98%B5.png"></p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客撰写模板</title>
+    <url>/2023/10/25/%E6%A8%A1%E6%9D%BF/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="一、博客上传"><a href="#一、博客上传" class="headerlink" title="一、博客上传"></a>一、博客上传</h2><h3 id="创建一个新博客"><a href="#创建一个新博客" class="headerlink" title="创建一个新博客"></a>创建一个新博客</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="预览页面"><a href="#预览页面" class="headerlink" title="预览页面"></a>预览页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="部署到github服务器"><a href="#部署到github服务器" class="headerlink" title="部署到github服务器"></a>部署到github服务器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、删除文章"><a href="#二、删除文章" class="headerlink" title="二、删除文章"></a>二、删除文章</h2><p>删除文章：<br>1、删除文件夹source/_posts下目标文章markdown文件<br>2、删除.deploy_git文件夹<br>3、执行hexo clean后，再执行hexo g，hexo d 即可</p>
+<h2 id="三、markdown文件编辑"><a href="#三、markdown文件编辑" class="headerlink" title="三、markdown文件编辑"></a>三、markdown文件编辑</h2><h3 id="3-1文件头"><a href="#3-1文件头" class="headerlink" title="3.1文件头"></a>3.1文件头</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 博客撰写模板
+date: <span class="token number">2023</span>-10-25 <span class="token number">10</span>:48:20
+description:
+tags:
+  - Hexo
+  - 博客撰写
+categories:
+  - Hexo
+  - 博客撰写
+mathjax: <span class="token boolean">true</span>
+sticky: <span class="token number">999</span>    <span class="token comment">#置顶</span>
+license: all_rights_reserved
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2数学公式写法："><a href="#3-2数学公式写法：" class="headerlink" title="3.2数学公式写法："></a>3.2数学公式写法：</h3><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$
+i<span class="token equation-command regex">\hbar</span><span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\partial</span>}{<span class="token equation-command regex">\partial</span> t}<span class="token equation-command regex">\psi</span>=-<span class="token equation-command regex">\frac</span>{<span class="token equation-command regex">\hbar</span>^2}{2m}<span class="token equation-command regex">\nabla</span>^2<span class="token equation-command regex">\psi</span>+V<span class="token equation-command regex">\psi</span>
+$$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="25.832ex" height="5.018ex" role="img" focusable="false" viewBox="0 -1509.9 11417.6 2217.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(345,0)"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mfrac" transform="translate(907,0)"><g data-mml-node="mi" transform="translate(400.5,676)"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D715" d="M202 508Q179 508 169 520T158 547Q158 557 164 577T185 624T230 675T301 710L333 715H345Q378 715 384 714Q447 703 489 661T549 568T566 457Q566 362 519 240T402 53Q321 -22 223 -22Q123 -22 73 56Q42 102 42 148V159Q42 276 129 370T322 465Q383 465 414 434T455 367L458 378Q478 461 478 515Q478 603 437 639T344 676Q266 676 223 612Q264 606 264 572Q264 547 246 528T202 508ZM430 306Q430 372 401 400T333 428Q270 428 222 382Q197 354 183 323T150 221Q132 149 132 116Q132 21 232 21Q244 21 250 22Q327 35 374 112Q389 137 409 196T430 306Z"></path></g><g data-mml-node="mi" transform="translate(566,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g></g><rect width="1127" height="60" x="120" y="220"></rect></g><g data-mml-node="mi" transform="translate(2274,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(3202.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(4258.6,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mfrac" transform="translate(5036.6,0)"><g data-mml-node="msup" transform="translate(384.2,676)"><g data-mml-node="mi"><path data-c="210F" d="M182 599Q182 611 174 615T133 619Q118 619 114 621T109 630Q109 636 114 656T122 681Q125 685 202 688Q272 695 286 695Q304 695 304 684Q304 682 295 644T282 597Q282 592 360 592H399Q430 592 445 587T460 563Q460 552 451 541L442 535H266L251 468Q247 453 243 436T236 409T233 399Q233 395 244 404Q295 441 357 441Q405 441 445 417T485 333Q485 284 449 178T412 58T426 44Q447 44 466 68Q485 87 500 130L509 152H531H543Q562 152 562 144Q562 128 546 93T494 23T415 -13Q385 -13 359 3T322 44Q318 52 318 77Q318 99 352 196T386 337Q386 386 346 386Q318 386 286 370Q267 361 245 338T211 292Q207 287 193 235T162 113T138 21Q128 7 122 4Q105 -12 83 -12Q66 -12 54 -2T42 26L166 530Q166 534 161 534T129 535Q127 535 122 535T112 534Q74 534 74 562Q74 570 77 576T84 585T96 589T109 591T124 592T138 592L182 595V599Z"></path></g><g data-mml-node="mn" transform="translate(646.1,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mrow" transform="translate(220,-686)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><rect width="1578" height="60" x="120" y="220"></rect></g><g data-mml-node="msup" transform="translate(6854.6,0)"><g data-mml-node="mi"><path data-c="2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"></path></g><g data-mml-node="mn" transform="translate(866,413) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mi" transform="translate(8124.1,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g><g data-mml-node="mo" transform="translate(8997.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(9997.6,0)"><path data-c="1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path></g><g data-mml-node="mi" transform="translate(10766.6,0)"><path data-c="1D713" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path></g></g></g></svg></mjx-container></p>
+<h3 id="3-3图片文件："><a href="#3-3图片文件：" class="headerlink" title="3.3图片文件："></a>3.3图片文件：</h3><p>比如你放在 同名字文件夹中的 <code>test.png</code> 图片，你可以这样引用</p>
+<p><code>![Test](test.png)</code><br><img src="/2023/10/25/%E6%A8%A1%E6%9D%BF/%E5%8D%9A%E5%AE%A2%E6%92%B0%E5%86%99%E6%A8%A1%E6%9D%BF/test.png" alt="Test"></p>
+<ul>
+<li>line1</li>
+<li>line2</li>
+</ul>
+<h3 id="3-6代码"><a href="#3-6代码" class="headerlink" title="3.6代码"></a>3.6代码</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">&lt;language&gt;</span>
+<span class="token code-block language-language">context</span>
+<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-7表格"><a href="#3-7表格" class="headerlink" title="3.7表格"></a>3.7表格</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> 操作符及运算 </span><span class="token punctuation">|</span><span class="token table-header important"> 描述                                         </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------------</span> <span class="token punctuation">|</span> <span class="token punctuation">--------------------------------------------</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> S-T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括在S内但不包含在T内的元素 </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S&amp;T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括同时在S和T内的元素       </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S^T          </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T中非共同元素         </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> S\|T         </span><span class="token punctuation">|</span><span class="token table-data"> 返回一个新集合，包括S和T所有元素             </span><span class="token punctuation">|</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>操作符及运算</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S-T</td>
+<td>返回一个新集合，包括在S内但不包含在T内的元素</td>
+</tr>
+<tr>
+<td>S&amp;T</td>
+<td>返回一个新集合，包括同时在S和T内的元素</td>
+</tr>
+<tr>
+<td>S^T</td>
+<td>返回一个新集合，包括S和T中非共同元素</td>
+</tr>
+<tr>
+<td>S|T</td>
+<td>返回一个新集合，包括S和T所有元素</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客撰写</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-1.2基本运算</title>
+    <url>/2023/10/25/Matlab/1.2%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<h1 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h1><h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><ul>
+<li>+ - * ^ \(左除) /(右除)</li>
+</ul>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">\</span>B<span class="token operator">==</span><span class="token function">inv</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token operator">*</span>B
+B<span class="token operator">/</span>A<span class="token operator">==</span>B<span class="token operator">*</span><span class="token function">inv</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>**.**点乘运算(对应元素相乘)</p>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">.*</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h2 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h2><ul>
+<li>&gt;    &lt;     </li>
+<li>&gt;=     &lt;=   </li>
+<li>==    ~=(不等于)</li>
+</ul>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><ul>
+<li>&amp;与</li>
+<li>| 或</li>
+<li>~非</li>
+</ul>
+<h2 id="取整运算"><a href="#取整运算" class="headerlink" title="取整运算"></a>取整运算</h2><ul>
+<li>fix()<strong>取正数</strong></li>
+<li>floor()<strong>向下取</strong></li>
+<li>ceil()<strong>向上取</strong></li>
+<li>round()<strong>四舍五入</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-1.4字符串处理</title>
+    <url>/2023/10/25/Matlab/1.4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><h2 id="字符串的执行-类比python"><a href="#字符串的执行-类比python" class="headerlink" title="字符串的执行(类比python)"></a>字符串的执行(类比python)</h2><pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">eval</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="字符串与数值之间的转换"><a href="#字符串与数值之间的转换" class="headerlink" title="字符串与数值之间的转换"></a>字符串与数值之间的转换</h2><p>1.abs和double可以用来获取字符串矩阵中对应ASCLL码数值矩阵<br>2.char()可以把ASCALL码矩阵转换为字符串</p>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">s1<span class="token operator">=</span><span class="token string">'MATLAB'</span>
+a<span class="token operator">=</span><span class="token function">abs</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
+<span class="token function">char</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token number">32</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><p>  1.关系运算符(从左至右依次比较)           <strong>(返回为一个向量)</strong><br>  2.比较函数                                                 <strong>(返回为一个值0/1)</strong></p>
+  <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">strcmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等
+<span class="token function">strncmp</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串前n个字符是否相等
+<span class="token function">strcmpi</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等<span class="token punctuation">(</span>忽略大小写<span class="token punctuation">)</span>
+<span class="token function">strncmpi</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token operator">:</span>比较两字符串是否相等<span class="token punctuation">(</span>忽略大小写<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="查找替换"><a href="#查找替换" class="headerlink" title="查找替换"></a>查找替换</h2>  <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">findstr</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span>返回短字符串再行字符串中的开始位置
+<span class="token function">strrep</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>s3<span class="token punctuation">)</span>将s1中的所有子字符串s2替换为s3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matlab基础-1.5矩阵变换</title>
     <url>/2023/10/25/Matlab/1.5%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<h1 id="对角阵"><a href="#对角阵" class="headerlink" title="对角阵"></a>对角阵</h1><p>1.提取矩阵对角线元素</p>
@@ -1518,33 +1518,6 @@ A重排为m<span class="token operator">*</span>n矩阵<span aria-hidden="true" 
 </ul>
 <h1 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h1><ul>
 <li>inv(A)求逆</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-1.8稀疏矩阵</title>
-    <url>/2023/10/25/Matlab/1.8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h4 id="1）完全存储方式与稀疏存储方式的转化"><a href="#1）完全存储方式与稀疏存储方式的转化" class="headerlink" title="1）完全存储方式与稀疏存储方式的转化"></a>1）完全存储方式与稀疏存储方式的转化</h4><ul>
-<li>A=sparse(S)</li>
-<li>S=full(A)</li>
-</ul>
-<h4 id="2）直接建立稀疏存储矩阵"><a href="#2）直接建立稀疏存储矩阵" class="headerlink" title="2）直接建立稀疏存储矩阵"></a>2）直接建立稀疏存储矩阵</h4><ul>
-<li>sparse(m,n):生成一个m*n的所有元素都是零的稀疏矩阵</li>
-<li>sparse(u,v,s)<em><strong>u，v，s都是向量</strong></em>:生成一个u为行标，v为下标的稀疏矩阵</li>
-<li>B=spconvert(A)<img src="/images/matlab/spconvert.png"></li>
-</ul>
-<h4 id="3）带状稀疏矩阵的稀疏存储"><a href="#3）带状稀疏矩阵的稀疏存储" class="headerlink" title="3）带状稀疏矩阵的稀疏存储"></a>3）带状稀疏矩阵的稀疏存储</h4><ul>
-<li>[B,d]=spdiags(A):从带状稀疏矩阵A中提取全部非零对角线元素赋给矩阵B及其这些非零对角线的位置向量d</li>
-<li>A=spdiags(B,d,m,n):产生带状稀疏矩阵的稀疏存储矩阵A，其中m、n为带状稀疏矩阵的行数和列数，b的第i列为原带状稀疏矩阵的第i条非零对角线，向量d为原带状稀疏矩阵所有非零对角线的位置</li>
-</ul>
-<h4 id="4）单位矩阵的稀疏存储"><a href="#4）单位矩阵的稀疏存储" class="headerlink" title="4）单位矩阵的稀疏存储"></a>4）单位矩阵的稀疏存储</h4><ul>
-<li>speye(m,n)返回一个m*n稀疏存储的单位矩阵</li>
 </ul>
 ]]></content>
       <categories>
@@ -1600,6 +1573,44 @@ A重排为m<span class="token operator">*</span>n矩阵<span aria-hidden="true" 
 <h1 id="特征值的几何意义"><a href="#特征值的几何意义" class="headerlink" title="特征值的几何意义"></a>特征值的几何意义</h1><pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">eigshow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>绘制单位圆上向量与Ax的图形<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 ]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-1.8稀疏矩阵</title>
+    <url>/2023/10/25/Matlab/1.8%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h4 id="1）完全存储方式与稀疏存储方式的转化"><a href="#1）完全存储方式与稀疏存储方式的转化" class="headerlink" title="1）完全存储方式与稀疏存储方式的转化"></a>1）完全存储方式与稀疏存储方式的转化</h4><ul>
+<li>A=sparse(S)</li>
+<li>S=full(A)</li>
+</ul>
+<h4 id="2）直接建立稀疏存储矩阵"><a href="#2）直接建立稀疏存储矩阵" class="headerlink" title="2）直接建立稀疏存储矩阵"></a>2）直接建立稀疏存储矩阵</h4><ul>
+<li>sparse(m,n):生成一个m*n的所有元素都是零的稀疏矩阵</li>
+<li>sparse(u,v,s)<em><strong>u，v，s都是向量</strong></em>:生成一个u为行标，v为下标的稀疏矩阵</li>
+<li>B=spconvert(A)<img src="/images/matlab/spconvert.png"></li>
+</ul>
+<h4 id="3）带状稀疏矩阵的稀疏存储"><a href="#3）带状稀疏矩阵的稀疏存储" class="headerlink" title="3）带状稀疏矩阵的稀疏存储"></a>3）带状稀疏矩阵的稀疏存储</h4><ul>
+<li>[B,d]=spdiags(A):从带状稀疏矩阵A中提取全部非零对角线元素赋给矩阵B及其这些非零对角线的位置向量d</li>
+<li>A=spdiags(B,d,m,n):产生带状稀疏矩阵的稀疏存储矩阵A，其中m、n为带状稀疏矩阵的行数和列数，b的第i列为原带状稀疏矩阵的第i条非零对角线，向量d为原带状稀疏矩阵所有非零对角线的位置</li>
+</ul>
+<h4 id="4）单位矩阵的稀疏存储"><a href="#4）单位矩阵的稀疏存储" class="headerlink" title="4）单位矩阵的稀疏存储"></a>4）单位矩阵的稀疏存储</h4><ul>
+<li>speye(m,n)返回一个m*n稀疏存储的单位矩阵</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-10.1建模模型</title>
+    <url>/2023/10/25/Matlab/10%E5%BB%BA%E6%A8%A1%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h4 id="最优化模型"><a href="#最优化模型" class="headerlink" title="最优化模型"></a>最优化模型</h4><h4 id="层次分析法"><a href="#层次分析法" class="headerlink" title="层次分析法"></a>层次分析法</h4><h4 id="多属性决策"><a href="#多属性决策" class="headerlink" title="多属性决策"></a>多属性决策</h4><h4 id="灰色预测"><a href="#灰色预测" class="headerlink" title="灰色预测"></a>灰色预测</h4><h4 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h4><h4 id="模拟退火算法"><a href="#模拟退火算法" class="headerlink" title="模拟退火算法"></a>模拟退火算法</h4><h4 id="排队论"><a href="#排队论" class="headerlink" title="排队论"></a>排队论</h4><h4 id="元胞自动机"><a href="#元胞自动机" class="headerlink" title="元胞自动机"></a>元胞自动机</h4><h4 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h4><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4>]]></content>
       <categories>
         <category>Matlab</category>
       </categories>
@@ -1676,6 +1687,29 @@ A重排为m<span class="token operator">*</span>n矩阵<span aria-hidden="true" 
 <li>global A B</li>
 <li>定义使用的时候都要声明</li>
 </ul>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-4.2多项式计算</title>
+    <url>/2023/10/25/Matlab/4.2%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%AE%A1%E7%AE%97/</url>
+    <content><![CDATA[<h1 id="标准形式"><a href="#标准形式" class="headerlink" title="标准形式"></a>标准形式</h1><p>次数从高到低表示</p>
+<p>系数向量</p>
+<h4 id="加减运算"><a href="#加减运算" class="headerlink" title="加减运算"></a>加减运算</h4><h4 id="乘法运算"><a href="#乘法运算" class="headerlink" title="乘法运算"></a>乘法运算</h4><p>conv(p1,p2)</p>
+<h4 id="多项式除法"><a href="#多项式除法" class="headerlink" title="多项式除法"></a>多项式除法</h4><p>[Q,r]=deconv(P1,P2)</p>
+<h4 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h4><p>polyder()</p>
+<p><img src="/images/matlab/%E6%B1%82%E5%AF%BC.png"></p>
+<h4 id="多项式求值"><a href="#多项式求值" class="headerlink" title="多项式求值"></a>多项式求值</h4><ul>
+<li>polyval(p,x)代数多项式求值</li>
+<li>polyvalm(p,x)矩阵多项式求值</li>
+</ul>
+<h4 id="多项式求根"><a href="#多项式求根" class="headerlink" title="多项式求根"></a>多项式求根</h4><p>x=roots(p)</p>
+<p>p=poly(x)由根反求系数向量</p>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -1830,31 +1864,6 @@ Y<span class="token operator">=</span>y<span class="token operator">*</span><spa
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-10.1建模模型</title>
-    <url>/2023/10/25/Matlab/10%E5%BB%BA%E6%A8%A1%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h4 id="最优化模型"><a href="#最优化模型" class="headerlink" title="最优化模型"></a>最优化模型</h4><h4 id="层次分析法"><a href="#层次分析法" class="headerlink" title="层次分析法"></a>层次分析法</h4><h4 id="多属性决策"><a href="#多属性决策" class="headerlink" title="多属性决策"></a>多属性决策</h4><h4 id="灰色预测"><a href="#灰色预测" class="headerlink" title="灰色预测"></a>灰色预测</h4><h4 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h4><h4 id="模拟退火算法"><a href="#模拟退火算法" class="headerlink" title="模拟退火算法"></a>模拟退火算法</h4><h4 id="排队论"><a href="#排队论" class="headerlink" title="排队论"></a>排队论</h4><h4 id="元胞自动机"><a href="#元胞自动机" class="headerlink" title="元胞自动机"></a>元胞自动机</h4><h4 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h4><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4>]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-4.4曲线拟合</title>
-    <url>/2023/10/25/Matlab/4.4%E6%9B%B2%E7%BA%BF%E6%8B%9F%E5%90%88/</url>
-    <content><![CDATA[<h4 id="polyfit-多项式拟合函数（最小二乘法）"><a href="#polyfit-多项式拟合函数（最小二乘法）" class="headerlink" title="polyfit()多项式拟合函数（最小二乘法）"></a>polyfit()多项式拟合函数（最小二乘法）</h4><p>p=polyfit(x,y,3)</p>
-<p>polyval(p,2020)计算p的值，隐函数的值</p>
-<p><img src="/images/matlab/%E6%8B%9F%E5%90%88%E5%87%BD%E6%95%B0.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab基础-4.3数据插值</title>
     <url>/2023/10/25/Matlab/4.3%E6%95%B0%E6%8D%AE%E6%8F%92%E5%80%BC/</url>
     <content><![CDATA[<h4 id="interp1-一维插值函数"><a href="#interp1-一维插值函数" class="headerlink" title="interp1()一维插值函数"></a>interp1()一维插值函数</h4><ul>
@@ -1872,6 +1881,36 @@ Y<span class="token operator">=</span>y<span class="token operator">*</span><spa
 <h4 id="interp2-二维插值函数"><a href="#interp2-二维插值函数" class="headerlink" title="interp2()二维插值函数"></a>interp2()二维插值函数</h4><ul>
 <li>Z1=interp1(X,Y,Z,X1,Y1,method)</li>
 </ul>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-5.2线性方程计算</title>
+    <url>/2023/10/25/Matlab/5.2%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E8%AE%A1%E7%AE%97/</url>
+    <content><![CDATA[<h1 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h1><p>利用AX=B</p>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">;</span><span class="token number">17</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+X<span class="token operator">=</span>A<span class="token operator">\</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-4.4曲线拟合</title>
+    <url>/2023/10/25/Matlab/4.4%E6%9B%B2%E7%BA%BF%E6%8B%9F%E5%90%88/</url>
+    <content><![CDATA[<h4 id="polyfit-多项式拟合函数（最小二乘法）"><a href="#polyfit-多项式拟合函数（最小二乘法）" class="headerlink" title="polyfit()多项式拟合函数（最小二乘法）"></a>polyfit()多项式拟合函数（最小二乘法）</h4><p>p=polyfit(x,y,3)</p>
+<p>polyval(p,2020)计算p的值，隐函数的值</p>
+<p><img src="/images/matlab/%E6%8B%9F%E5%90%88%E5%87%BD%E6%95%B0.png"></p>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -1907,20 +1946,37 @@ Y<span class="token operator">=</span>y<span class="token operator">*</span><spa
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-4.2多项式计算</title>
-    <url>/2023/10/25/Matlab/4.2%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%AE%A1%E7%AE%97/</url>
-    <content><![CDATA[<h1 id="标准形式"><a href="#标准形式" class="headerlink" title="标准形式"></a>标准形式</h1><p>次数从高到低表示</p>
-<p>系数向量</p>
-<h4 id="加减运算"><a href="#加减运算" class="headerlink" title="加减运算"></a>加减运算</h4><h4 id="乘法运算"><a href="#乘法运算" class="headerlink" title="乘法运算"></a>乘法运算</h4><p>conv(p1,p2)</p>
-<h4 id="多项式除法"><a href="#多项式除法" class="headerlink" title="多项式除法"></a>多项式除法</h4><p>[Q,r]=deconv(P1,P2)</p>
-<h4 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h4><p>polyder()</p>
-<p><img src="/images/matlab/%E6%B1%82%E5%AF%BC.png"></p>
-<h4 id="多项式求值"><a href="#多项式求值" class="headerlink" title="多项式求值"></a>多项式求值</h4><ul>
-<li>polyval(p,x)代数多项式求值</li>
-<li>polyvalm(p,x)矩阵多项式求值</li>
+    <title>Matlab基础-5.3非线性方程&amp;最优化</title>
+    <url>/2023/10/25/Matlab/5.3%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B&amp;%E6%9C%80%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<h1 id="非线性方程的数值求解"><a href="#非线性方程的数值求解" class="headerlink" title="非线性方程的数值求解"></a>非线性方程的数值求解</h1><h4 id="1）单变量非线性方程求解"><a href="#1）单变量非线性方程求解" class="headerlink" title="1）单变量非线性方程求解"></a>1）单变量非线性方程求解</h4><p>x=fzero(filename,x0)</p>
+<p>filename待求根方程左端的函数表达式，x0是初值</p>
+<h4 id="2）非线性方程组的求解"><a href="#2）非线性方程组的求解" class="headerlink" title="2）非线性方程组的求解"></a>2）非线性方程组的求解</h4><p>x=fsolve(filename,x0,option)</p>
+<p>x为返回的近似解，filename是待求根方程左端的函数表达式，x0是初值，option用于设置优化工具箱的优化参数，可以调用optimset(‘Display’,’off’)函数来完成优化参数</p>
+<p><img src="/images/matlab/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%A0%B9.png"></p>
+<h1 id="函数极值"><a href="#函数极值" class="headerlink" title="函数极值"></a>函数极值</h1><h4 id="1）无约束最优化问题"><a href="#1）无约束最优化问题" class="headerlink" title="1）无约束最优化问题"></a>1）无约束最优化问题</h4><p>求最小值函数：<br><img src="/images/matlab/%E6%97%A0%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98.png"></p>
+<h4 id="2）有约束最优化问题"><a href="#2）有约束最优化问题" class="headerlink" title="2）有约束最优化问题"></a>2）有约束最优化问题</h4><p><img src="/images/matlab/%E6%9C%89%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98.png"></p>
+<p><img src="/images/matlab/%E6%9C%89%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%982.png"></p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-5.4常微分方程数值求解</title>
+    <url>/2023/10/25/Matlab/5.4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%95%B0%E5%80%BC%E6%B1%82%E8%A7%A3/</url>
+    <content><![CDATA[<h4 id="常微分方程求解函数"><a href="#常微分方程求解函数" class="headerlink" title="常微分方程求解函数"></a>常微分方程求解函数</h4><p><img src="/images/matlab/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0.png"></p>
+<p><img src="/images/matlab/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B02.png"></p>
+<ul>
+<li>前n表阶数，后n表误差估计阶数</li>
 </ul>
-<h4 id="多项式求根"><a href="#多项式求根" class="headerlink" title="多项式求根"></a>多项式求根</h4><p>x=roots(p)</p>
-<p>p=poly(x)由根反求系数向量</p>
+<p><img src="/images/matlab/%E4%BA%8C%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86.png"></p>
+<p><img src="/images/matlab/%E4%BA%8C%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%862.png"></p>
+<h4 id="刚性问题"><a href="#刚性问题" class="headerlink" title="刚性问题"></a>刚性问题</h4><h5 id="1）说明估算很刚性"><a href="#1）说明估算很刚性" class="headerlink" title="1）说明估算很刚性"></a>1）说明估算很刚性</h5><p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%98.png"></p>
+<p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%982.png"></p>
+<h5 id="2）刚性求解"><a href="#2）刚性求解" class="headerlink" title="2）刚性求解"></a>2）刚性求解</h5><p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%983.png"></p>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -1958,53 +2014,50 @@ Y<span class="token operator">=</span>y<span class="token operator">*</span><spa
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-5.3非线性方程&amp;最优化</title>
-    <url>/2023/10/25/Matlab/5.3%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B&amp;%E6%9C%80%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<h1 id="非线性方程的数值求解"><a href="#非线性方程的数值求解" class="headerlink" title="非线性方程的数值求解"></a>非线性方程的数值求解</h1><h4 id="1）单变量非线性方程求解"><a href="#1）单变量非线性方程求解" class="headerlink" title="1）单变量非线性方程求解"></a>1）单变量非线性方程求解</h4><p>x=fzero(filename,x0)</p>
-<p>filename待求根方程左端的函数表达式，x0是初值</p>
-<h4 id="2）非线性方程组的求解"><a href="#2）非线性方程组的求解" class="headerlink" title="2）非线性方程组的求解"></a>2）非线性方程组的求解</h4><p>x=fsolve(filename,x0,option)</p>
-<p>x为返回的近似解，filename是待求根方程左端的函数表达式，x0是初值，option用于设置优化工具箱的优化参数，可以调用optimset(‘Display’,’off’)函数来完成优化参数</p>
-<p><img src="/images/matlab/%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%A0%B9.png"></p>
-<h1 id="函数极值"><a href="#函数极值" class="headerlink" title="函数极值"></a>函数极值</h1><h4 id="1）无约束最优化问题"><a href="#1）无约束最优化问题" class="headerlink" title="1）无约束最优化问题"></a>1）无约束最优化问题</h4><p>求最小值函数：<br><img src="/images/matlab/%E6%97%A0%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98.png"></p>
-<h4 id="2）有约束最优化问题"><a href="#2）有约束最优化问题" class="headerlink" title="2）有约束最优化问题"></a>2）有约束最优化问题</h4><p><img src="/images/matlab/%E6%9C%89%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98.png"></p>
-<p><img src="/images/matlab/%E6%9C%89%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%982.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-5.2线性方程计算</title>
-    <url>/2023/10/25/Matlab/5.2%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E8%AE%A1%E7%AE%97/</url>
-    <content><![CDATA[<h1 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h1><p>利用AX=B</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">;</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">;</span><span class="token number">17</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-X<span class="token operator">=</span>A<span class="token operator">\</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-5.4常微分方程数值求解</title>
-    <url>/2023/10/25/Matlab/5.4%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%95%B0%E5%80%BC%E6%B1%82%E8%A7%A3/</url>
-    <content><![CDATA[<h4 id="常微分方程求解函数"><a href="#常微分方程求解函数" class="headerlink" title="常微分方程求解函数"></a>常微分方程求解函数</h4><p><img src="/images/matlab/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0.png"></p>
-<p><img src="/images/matlab/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B02.png"></p>
+    <title>Matlab基础-6.4符号方程求解</title>
+    <url>/2023/10/25/Matlab/6.4%E7%AC%A6%E5%8F%B7%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3/</url>
+    <content><![CDATA[<h4 id="1）代数方程"><a href="#1）代数方程" class="headerlink" title="1）代数方程"></a>1）代数方程</h4><ul>
+<li><p>solve(s):求解符号表达式s的代数方程，求解变量为默认变量</p>
+</li>
+<li><p>solve(s1,s2,v1,v2):求解符号表达式s1，s2的代数方程组，求解变量为v1，v2</p>
 <ul>
-<li>前n表阶数，后n表误差估计阶数</li>
+<li><p>可省略等于零</p>
+</li>
+<li><pre><code class="matlab">syms x y a b c;
+f=a*x^2+b*x+c==0
+g=a*x^2+b*x+c
+solve(f)==solve(g)
+</code></pre>
+</li>
 </ul>
-<p><img src="/images/matlab/%E4%BA%8C%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%86.png"></p>
-<p><img src="/images/matlab/%E4%BA%8C%E9%98%B6%E5%B8%B8%E5%BE%AE%E5%88%862.png"></p>
-<h4 id="刚性问题"><a href="#刚性问题" class="headerlink" title="刚性问题"></a>刚性问题</h4><h5 id="1）说明估算很刚性"><a href="#1）说明估算很刚性" class="headerlink" title="1）说明估算很刚性"></a>1）说明估算很刚性</h5><p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%98.png"></p>
-<p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%982.png"></p>
-<h5 id="2）刚性求解"><a href="#2）刚性求解" class="headerlink" title="2）刚性求解"></a>2）刚性求解</h5><p><img src="/images/matlab/%E5%88%9A%E6%80%A7%E9%97%AE%E9%A2%983.png"></p>
+</li>
+</ul>
+<h4 id="2）常微分方程求解"><a href="#2）常微分方程求解" class="headerlink" title="2）常微分方程求解"></a>2）常微分方程求解</h4><h5 id="用大写字母D表示导数"><a href="#用大写字母D表示导数" class="headerlink" title="用大写字母D表示导数"></a>用大写字母D表示导数</h5><h5 id="Dy表示y’-D2y表示y’’-Dy-0-5表示y’-0-5"><a href="#Dy表示y’-D2y表示y’’-Dy-0-5表示y’-0-5" class="headerlink" title="Dy表示y’,D2y表示y’’,Dy(0)=5表示y’(0)=5"></a>Dy表示y’,D2y表示y’’,Dy(0)=5表示y’(0)=5</h5><h5 id="D3y-D2y-Dy-x-5-0表示微分方程"><a href="#D3y-D2y-Dy-x-5-0表示微分方程" class="headerlink" title="D3y+D2y+Dy-x+5=0表示微分方程"></a>D3y+D2y+Dy-x+5=0表示微分方程</h5><h5 id="符号常量微分方程求解通过dsolve"><a href="#符号常量微分方程求解通过dsolve" class="headerlink" title="符号常量微分方程求解通过dsolve"></a>符号常量微分方程求解通过dsolve</h5><h5 id="dsolve-e-c-v"><a href="#dsolve-e-c-v" class="headerlink" title="dsolve(e,c,v)"></a>dsolve(e,c,v)</h5><p>用于求解常微分方程e在初值条件c下的特解。参数v是方程中自变量，省略是按默认原则处理，若没有给出条件c，则求方程同届</p>
+<h5 id="常微分方程组"><a href="#常微分方程组" class="headerlink" title="常微分方程组"></a>常微分方程组</h5><h5 id="dsolve-e1-e2-c1-c2-v"><a href="#dsolve-e1-e2-c1-c2-v" class="headerlink" title="dsolve(e1,e2,c1,c2,v)"></a>dsolve(e1,e2,c1,c2,v)</h5><p>用于求解常微方程组e1，e2在初值条件c1，c2下的特解，若不给初值条件，则求方程的通解。给出求解变量，如果没有指定自变量，则采用默认自变量t</p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-6.2符号微积分</title>
+    <url>/2023/10/25/Matlab/6.2%E7%AC%A6%E5%8F%B7%E5%BE%AE%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h4 id="1）符号函数的极限"><a href="#1）符号函数的极限" class="headerlink" title="1）符号函数的极限"></a>1）符号函数的极限</h4><p>limit(f,x,a)</p>
+<p>limit(f,x,a,’right’)</p>
+<p>f关于x在a处的右极限</p>
+<h4 id="2）符号函数的导数"><a href="#2）符号函数的导数" class="headerlink" title="2）符号函数的导数"></a>2）符号函数的导数</h4><p>diff(f,x,n)</p>
+<p>f关于x的n阶导</p>
+<h4 id="3）符号函数的积分"><a href="#3）符号函数的积分" class="headerlink" title="3）符号函数的积分"></a>3）符号函数的积分</h4><h5 id="（1）不定积分"><a href="#（1）不定积分" class="headerlink" title="（1）不定积分"></a>（1）不定积分</h5><ul>
+<li>int(f,x)</li>
+</ul>
+<h5 id="（2）定积分"><a href="#（2）定积分" class="headerlink" title="（2）定积分"></a>（2）定积分</h5><ul>
+<li><p>int(f,x,a,b)</p>
+<p><img src="/images/matlab/%E7%AC%A6%E5%8F%B7%E5%87%BD%E6%95%B0%E5%AE%9A%E7%A7%AF%E5%88%86.png"></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -2019,6 +2072,46 @@ X<span class="token operator">=</span>A<span class="token operator">\</span>B<sp
     <content><![CDATA[<h4 id="1）级数求和"><a href="#1）级数求和" class="headerlink" title="1）级数求和"></a>1）级数求和</h4><p><img src="/..%5C%E5%9B%BE%E7%89%87%5Cmatlab%5C%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C.png"></p>
 <h4 id="2）泰勒级数"><a href="#2）泰勒级数" class="headerlink" title="2）泰勒级数"></a>2）泰勒级数</h4><p>函数表示幂级数</p>
 <p><img src="/images/matlab/%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0.png"></p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-7.2曲线与曲面对象</title>
+    <url>/2023/10/25/Matlab/7.2%E6%9B%B2%E7%BA%BF%E4%B8%8E%E6%9B%B2%E9%9D%A2%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<h4 id="曲线对象"><a href="#曲线对象" class="headerlink" title="曲线对象"></a>曲线对象</h4><h5 id="（1）建立曲线对象"><a href="#（1）建立曲线对象" class="headerlink" title="（1）建立曲线对象"></a>（1）建立曲线对象</h5><p>line()</p>
+<ul>
+<li>句柄变量=line(x,y,z,属性1，属性值1……)</li>
+</ul>
+<h5 id="（2）曲线对象常用属性"><a href="#（2）曲线对象常用属性" class="headerlink" title="（2）曲线对象常用属性"></a>（2）曲线对象常用属性</h5><p><img src="/images/matlab/%E6%9B%B2%E7%BA%BF%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7.png"></p>
+<h4 id="曲面对象"><a href="#曲面对象" class="headerlink" title="曲面对象"></a>曲面对象</h4><h5 id="（1）建立曲面对象"><a href="#（1）建立曲面对象" class="headerlink" title="（1）建立曲面对象"></a>（1）建立曲面对象</h5><p>surface()</p>
+<ul>
+<li><p>句柄变量=surface(x,y,z,c,属性1,属性值1)</p>
+<p>xyz存储数据点坐标，与surf函数含义相同；c用于指定不同高度下曲面颜色</p>
+</li>
+</ul>
+<h5 id="（2）曲面对象有关属性"><a href="#（2）曲面对象有关属性" class="headerlink" title="（2）曲面对象有关属性"></a>（2）曲面对象有关属性</h5><p><img src="/images/matlab/%E6%9B%B2%E9%9D%A2%E5%B1%9E%E6%80%A7.png"></p>
+<h4 id="光照处理"><a href="#光照处理" class="headerlink" title="光照处理"></a>光照处理</h4><h5 id="（1）创建光源对象"><a href="#（1）创建光源对象" class="headerlink" title="（1）创建光源对象"></a>（1）创建光源对象</h5><p>light()</p>
+<p>对象句柄=light(属性1，属性值1……)</p>
+<h5 id="（2）光源对象属性"><a href="#（2）光源对象属性" class="headerlink" title="（2）光源对象属性"></a>（2）光源对象属性</h5><ul>
+<li>Color属性：设置光的颜色</li>
+<li>Style属性：设置光源类型，其取值为’infinite’(默认值)或’local’</li>
+<li>Position属性：指定光源位置</li>
+</ul>
+<h5 id="（3）设置光照模式"><a href="#（3）设置光照模式" class="headerlink" title="（3）设置光照模式"></a>（3）设置光照模式</h5><p>lighting命令格式：</p>
+<p>​	lighting 选项</p>
+<ul>
+<li>flat	均匀洒落</li>
+<li>gouraud	顶点颜色差补</li>
+<li>phong	对顶点发现插值再反光(效果好,时间长)</li>
+<li>none</li>
+</ul>
+<h4 id="图形对象的反射特性"><a href="#图形对象的反射特性" class="headerlink" title="图形对象的反射特性"></a>图形对象的反射特性</h4><p>是曲面句柄的属性</p>
+<p><img src="/images/matlab/%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7.png"></p>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -2083,99 +2176,6 @@ X<span class="token operator">=</span>A<span class="token operator">\</span>B<sp
 <p><img src="/../%E5%9B%BE%E7%89%87/matlab/%E5%9D%90%E6%A0%87%E8%BD%B4%E5%B1%9E%E6%80%A7.png"></p>
 <p><img src="/../%E5%9B%BE%E7%89%87/matlab/%E5%9D%90%E6%A0%87%E8%BD%B4%E5%B1%9E%E6%80%A72.png"></p>
 <p><img src="/../%E5%9B%BE%E7%89%87/matlab/%E5%9D%90%E6%A0%87%E8%BD%B4%E5%B1%9E%E6%80%A73.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-6.4符号方程求解</title>
-    <url>/2023/10/25/Matlab/6.4%E7%AC%A6%E5%8F%B7%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3/</url>
-    <content><![CDATA[<h4 id="1）代数方程"><a href="#1）代数方程" class="headerlink" title="1）代数方程"></a>1）代数方程</h4><ul>
-<li><p>solve(s):求解符号表达式s的代数方程，求解变量为默认变量</p>
-</li>
-<li><p>solve(s1,s2,v1,v2):求解符号表达式s1，s2的代数方程组，求解变量为v1，v2</p>
-<ul>
-<li><p>可省略等于零</p>
-</li>
-<li><pre><code class="matlab">syms x y a b c;
-f=a*x^2+b*x+c==0
-g=a*x^2+b*x+c
-solve(f)==solve(g)
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="2）常微分方程求解"><a href="#2）常微分方程求解" class="headerlink" title="2）常微分方程求解"></a>2）常微分方程求解</h4><h5 id="用大写字母D表示导数"><a href="#用大写字母D表示导数" class="headerlink" title="用大写字母D表示导数"></a>用大写字母D表示导数</h5><h5 id="Dy表示y’-D2y表示y’’-Dy-0-5表示y’-0-5"><a href="#Dy表示y’-D2y表示y’’-Dy-0-5表示y’-0-5" class="headerlink" title="Dy表示y’,D2y表示y’’,Dy(0)=5表示y’(0)=5"></a>Dy表示y’,D2y表示y’’,Dy(0)=5表示y’(0)=5</h5><h5 id="D3y-D2y-Dy-x-5-0表示微分方程"><a href="#D3y-D2y-Dy-x-5-0表示微分方程" class="headerlink" title="D3y+D2y+Dy-x+5=0表示微分方程"></a>D3y+D2y+Dy-x+5=0表示微分方程</h5><h5 id="符号常量微分方程求解通过dsolve"><a href="#符号常量微分方程求解通过dsolve" class="headerlink" title="符号常量微分方程求解通过dsolve"></a>符号常量微分方程求解通过dsolve</h5><h5 id="dsolve-e-c-v"><a href="#dsolve-e-c-v" class="headerlink" title="dsolve(e,c,v)"></a>dsolve(e,c,v)</h5><p>用于求解常微分方程e在初值条件c下的特解。参数v是方程中自变量，省略是按默认原则处理，若没有给出条件c，则求方程同届</p>
-<h5 id="常微分方程组"><a href="#常微分方程组" class="headerlink" title="常微分方程组"></a>常微分方程组</h5><h5 id="dsolve-e1-e2-c1-c2-v"><a href="#dsolve-e1-e2-c1-c2-v" class="headerlink" title="dsolve(e1,e2,c1,c2,v)"></a>dsolve(e1,e2,c1,c2,v)</h5><p>用于求解常微方程组e1，e2在初值条件c1，c2下的特解，若不给初值条件，则求方程的通解。给出求解变量，如果没有指定自变量，则采用默认自变量t</p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-6.2符号微积分</title>
-    <url>/2023/10/25/Matlab/6.2%E7%AC%A6%E5%8F%B7%E5%BE%AE%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h4 id="1）符号函数的极限"><a href="#1）符号函数的极限" class="headerlink" title="1）符号函数的极限"></a>1）符号函数的极限</h4><p>limit(f,x,a)</p>
-<p>limit(f,x,a,’right’)</p>
-<p>f关于x在a处的右极限</p>
-<h4 id="2）符号函数的导数"><a href="#2）符号函数的导数" class="headerlink" title="2）符号函数的导数"></a>2）符号函数的导数</h4><p>diff(f,x,n)</p>
-<p>f关于x的n阶导</p>
-<h4 id="3）符号函数的积分"><a href="#3）符号函数的积分" class="headerlink" title="3）符号函数的积分"></a>3）符号函数的积分</h4><h5 id="（1）不定积分"><a href="#（1）不定积分" class="headerlink" title="（1）不定积分"></a>（1）不定积分</h5><ul>
-<li>int(f,x)</li>
-</ul>
-<h5 id="（2）定积分"><a href="#（2）定积分" class="headerlink" title="（2）定积分"></a>（2）定积分</h5><ul>
-<li><p>int(f,x,a,b)</p>
-<p><img src="/images/matlab/%E7%AC%A6%E5%8F%B7%E5%87%BD%E6%95%B0%E5%AE%9A%E7%A7%AF%E5%88%86.png"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-7.2曲线与曲面对象</title>
-    <url>/2023/10/25/Matlab/7.2%E6%9B%B2%E7%BA%BF%E4%B8%8E%E6%9B%B2%E9%9D%A2%E5%AF%B9%E8%B1%A1/</url>
-    <content><![CDATA[<h4 id="曲线对象"><a href="#曲线对象" class="headerlink" title="曲线对象"></a>曲线对象</h4><h5 id="（1）建立曲线对象"><a href="#（1）建立曲线对象" class="headerlink" title="（1）建立曲线对象"></a>（1）建立曲线对象</h5><p>line()</p>
-<ul>
-<li>句柄变量=line(x,y,z,属性1，属性值1……)</li>
-</ul>
-<h5 id="（2）曲线对象常用属性"><a href="#（2）曲线对象常用属性" class="headerlink" title="（2）曲线对象常用属性"></a>（2）曲线对象常用属性</h5><p><img src="/images/matlab/%E6%9B%B2%E7%BA%BF%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7.png"></p>
-<h4 id="曲面对象"><a href="#曲面对象" class="headerlink" title="曲面对象"></a>曲面对象</h4><h5 id="（1）建立曲面对象"><a href="#（1）建立曲面对象" class="headerlink" title="（1）建立曲面对象"></a>（1）建立曲面对象</h5><p>surface()</p>
-<ul>
-<li><p>句柄变量=surface(x,y,z,c,属性1,属性值1)</p>
-<p>xyz存储数据点坐标，与surf函数含义相同；c用于指定不同高度下曲面颜色</p>
-</li>
-</ul>
-<h5 id="（2）曲面对象有关属性"><a href="#（2）曲面对象有关属性" class="headerlink" title="（2）曲面对象有关属性"></a>（2）曲面对象有关属性</h5><p><img src="/images/matlab/%E6%9B%B2%E9%9D%A2%E5%B1%9E%E6%80%A7.png"></p>
-<h4 id="光照处理"><a href="#光照处理" class="headerlink" title="光照处理"></a>光照处理</h4><h5 id="（1）创建光源对象"><a href="#（1）创建光源对象" class="headerlink" title="（1）创建光源对象"></a>（1）创建光源对象</h5><p>light()</p>
-<p>对象句柄=light(属性1，属性值1……)</p>
-<h5 id="（2）光源对象属性"><a href="#（2）光源对象属性" class="headerlink" title="（2）光源对象属性"></a>（2）光源对象属性</h5><ul>
-<li>Color属性：设置光的颜色</li>
-<li>Style属性：设置光源类型，其取值为’infinite’(默认值)或’local’</li>
-<li>Position属性：指定光源位置</li>
-</ul>
-<h5 id="（3）设置光照模式"><a href="#（3）设置光照模式" class="headerlink" title="（3）设置光照模式"></a>（3）设置光照模式</h5><p>lighting命令格式：</p>
-<p>​	lighting 选项</p>
-<ul>
-<li>flat	均匀洒落</li>
-<li>gouraud	顶点颜色差补</li>
-<li>phong	对顶点发现插值再反光(效果好,时间长)</li>
-<li>none</li>
-</ul>
-<h4 id="图形对象的反射特性"><a href="#图形对象的反射特性" class="headerlink" title="图形对象的反射特性"></a>图形对象的反射特性</h4><p>是曲面句柄的属性</p>
-<p><img src="/images/matlab/%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7.png"></p>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -2291,6 +2291,67 @@ solve(f)==solve(g)
       </tags>
   </entry>
   <entry>
+    <title>Matlab基础-9.1Excel使用matlab.md</title>
+    <url>/2023/10/25/Matlab/9.1excel%E4%BD%BF%E7%94%A8matlab/</url>
+    <content><![CDATA[<p><img src="/images/matlab/excel%E5%AF%BC%E5%85%A5matlab.png"></p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-8.2子系统</title>
+    <url>/2023/10/25/Matlab/8.2%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h4 id="1）通过subsystem模块建立子系统模块"><a href="#1）通过subsystem模块建立子系统模块" class="headerlink" title="1）通过subsystem模块建立子系统模块"></a>1）通过subsystem模块建立子系统模块</h4><p>双击进入</p>
+<h4 id="2）通过已有模块"><a href="#2）通过已有模块" class="headerlink" title="2）通过已有模块"></a>2）通过已有模块</h4><p>ctrl+g</p>
+<h4 id="3）子系统的封装"><a href="#3）子系统的封装" class="headerlink" title="3）子系统的封装"></a>3）子系统的封装</h4><p>ctrl+m</p>
+<p><img src="/images/matlab/%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B0%81%E8%A3%85.png"></p>
+<h4 id="4）条件执行子系统"><a href="#4）条件执行子系统" class="headerlink" title="4）条件执行子系统"></a>4）条件执行子系统</h4><h5 id="1-使能子系统"><a href="#1-使能子系统" class="headerlink" title="(1)使能子系统"></a>(1)使能子系统</h5><p>当且仅当使能信号为正,模块才接收信号</p>
+<h5 id="2-触发子系统"><a href="#2-触发子系统" class="headerlink" title="(2)触发子系统"></a>(2)触发子系统</h5><p>触发事件发生时开始子系统</p>
+<p>Triggered subsystem模块</p>
+<h5 id="3-使能加触发子系统"><a href="#3-使能加触发子系统" class="headerlink" title="(3)使能加触发子系统"></a>(3)使能加触发子系统</h5><p>同时触发时才触发</p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matlab基础-9.2matlab文件读写</title>
+    <url>/2023/10/25/Matlab/9.2matlab%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</url>
+    <content><![CDATA[<h4 id="打开关闭"><a href="#打开关闭" class="headerlink" title="打开关闭"></a>打开关闭</h4><h5 id="fopen"><a href="#fopen" class="headerlink" title="fopen()"></a>fopen()</h5><p><img src="/images/matlab/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E5%87%BD%E6%95%B0.png"></p>
+<p><img src="/images/matlab/%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.png"></p>
+<h5 id="fclose"><a href="#fclose" class="headerlink" title="fclose()"></a>fclose()</h5><p>status=fclose(fid)</p>
+<h4 id="文本文件读写"><a href="#文本文件读写" class="headerlink" title="文本文件读写"></a>文本文件读写</h4><p>fscanf(),fprintf()</p>
+<p><img src="/images/matlab/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99.png"></p>
+<p><img src="/images/matlab/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%A0%BC%E5%BC%8F.png"></p>
+<h4 id="二进制文件读写"><a href="#二进制文件读写" class="headerlink" title="二进制文件读写"></a>二进制文件读写</h4><p><img src="/images/matlab/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99.png"></p>
+<h4 id="数据文件定位"><a href="#数据文件定位" class="headerlink" title="数据文件定位"></a>数据文件定位</h4><h5 id="1）fseek"><a href="#1）fseek" class="headerlink" title="1）fseek()"></a>1）fseek()</h5><p>用于改变文件位置指针的位置，其格式为：</p>
+<p>fseek(fid,offset,origin)</p>
+<p>offset表示位置指针相对移动的字节数，origin表示位置指针移动的参照位置</p>
+<ul>
+<li><p>origin的可取值</p>
+<p>‘cof’或0：表示文件指针的当前位置</p>
+<p>‘bof’或-1：表示文件的开始位置</p>
+<p>‘eof’或1：表示文件的结束位置</p>
+</li>
+</ul>
+<h5 id="2）ftell"><a href="#2）ftell" class="headerlink" title="2）ftell()"></a>2）ftell()</h5><p>用于查询指针当前位置</p>
+<h5 id="3）feof"><a href="#3）feof" class="headerlink" title="3）feof()"></a>3）feof()</h5><p>用于判断是否达到尾部</p>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matlab基础-8.3S函数的设计与应用</title>
     <url>/2023/10/25/Matlab/8.3s%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h4 id="S函数"><a href="#S函数" class="headerlink" title="S函数"></a>S函数</h4><p>描述一个功能模块(编译成mex文件)</p>
@@ -2355,28 +2416,25 @@ sys<span class="token operator">=</span>k<span class="token operator">*</span>u<
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-9.1Excel使用matlab.md</title>
-    <url>/2023/10/25/Matlab/9.1excel%E4%BD%BF%E7%94%A8matlab/</url>
-    <content><![CDATA[<p><img src="/images/matlab/excel%E5%AF%BC%E5%85%A5matlab.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-8.2子系统</title>
-    <url>/2023/10/25/Matlab/8.2%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h4 id="1）通过subsystem模块建立子系统模块"><a href="#1）通过subsystem模块建立子系统模块" class="headerlink" title="1）通过subsystem模块建立子系统模块"></a>1）通过subsystem模块建立子系统模块</h4><p>双击进入</p>
-<h4 id="2）通过已有模块"><a href="#2）通过已有模块" class="headerlink" title="2）通过已有模块"></a>2）通过已有模块</h4><p>ctrl+g</p>
-<h4 id="3）子系统的封装"><a href="#3）子系统的封装" class="headerlink" title="3）子系统的封装"></a>3）子系统的封装</h4><p>ctrl+m</p>
-<p><img src="/images/matlab/%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B0%81%E8%A3%85.png"></p>
-<h4 id="4）条件执行子系统"><a href="#4）条件执行子系统" class="headerlink" title="4）条件执行子系统"></a>4）条件执行子系统</h4><h5 id="1-使能子系统"><a href="#1-使能子系统" class="headerlink" title="(1)使能子系统"></a>(1)使能子系统</h5><p>当且仅当使能信号为正,模块才接收信号</p>
-<h5 id="2-触发子系统"><a href="#2-触发子系统" class="headerlink" title="(2)触发子系统"></a>(2)触发子系统</h5><p>触发事件发生时开始子系统</p>
-<p>Triggered subsystem模块</p>
-<h5 id="3-使能加触发子系统"><a href="#3-使能加触发子系统" class="headerlink" title="(3)使能加触发子系统"></a>(3)使能加触发子系统</h5><p>同时触发时才触发</p>
+    <title>Matlab基础-9.4matlab使用其他程序</title>
+    <url>/2023/10/25/Matlab/9.4matlab%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h4 id="MEX库函数"><a href="#MEX库函数" class="headerlink" title="MEX库函数"></a>MEX库函数</h4><p>常用MEX库函数</p>
+<ul>
+<li>mexCallMATLAB调用matlab函数</li>
+<li>mexErrMsgTxt用于输出从matlab工作空间获取的运行过程错误信息</li>
+<li>mexEvalString用于在matlab环境中执行表达式</li>
+<li>mexGetVariable用于MEX文件从matlab工作区获取指定变量</li>
+<li>mexPutVariable用于mex文件向matlab工作区输出指定变量</li>
+</ul>
+<p><img src="/images/matlab/MEX%E6%9E%84%E6%88%901.png"></p>
+<p><img src="/images/matlab/MEX%E6%9E%84%E6%88%902.png"></p>
+<h1 id="MEX文件编译"><a href="#MEX文件编译" class="headerlink" title="MEX文件编译"></a>MEX文件编译</h1><ul>
+<li><p>vs</p>
+</li>
+<li><p>matlab编译器</p>
+<p>mex MEXDemo.cpp</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -2447,36 +2505,6 @@ sys<span class="token operator">=</span>k<span class="token operator">*</span>u<
       </tags>
   </entry>
   <entry>
-    <title>Matlab基础-9.2matlab文件读写</title>
-    <url>/2023/10/25/Matlab/9.2matlab%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</url>
-    <content><![CDATA[<h4 id="打开关闭"><a href="#打开关闭" class="headerlink" title="打开关闭"></a>打开关闭</h4><h5 id="fopen"><a href="#fopen" class="headerlink" title="fopen()"></a>fopen()</h5><p><img src="/images/matlab/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E5%87%BD%E6%95%B0.png"></p>
-<p><img src="/images/matlab/%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F.png"></p>
-<h5 id="fclose"><a href="#fclose" class="headerlink" title="fclose()"></a>fclose()</h5><p>status=fclose(fid)</p>
-<h4 id="文本文件读写"><a href="#文本文件读写" class="headerlink" title="文本文件读写"></a>文本文件读写</h4><p>fscanf(),fprintf()</p>
-<p><img src="/images/matlab/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99.png"></p>
-<p><img src="/images/matlab/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%A0%BC%E5%BC%8F.png"></p>
-<h4 id="二进制文件读写"><a href="#二进制文件读写" class="headerlink" title="二进制文件读写"></a>二进制文件读写</h4><p><img src="/images/matlab/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99.png"></p>
-<h4 id="数据文件定位"><a href="#数据文件定位" class="headerlink" title="数据文件定位"></a>数据文件定位</h4><h5 id="1）fseek"><a href="#1）fseek" class="headerlink" title="1）fseek()"></a>1）fseek()</h5><p>用于改变文件位置指针的位置，其格式为：</p>
-<p>fseek(fid,offset,origin)</p>
-<p>offset表示位置指针相对移动的字节数，origin表示位置指针移动的参照位置</p>
-<ul>
-<li><p>origin的可取值</p>
-<p>‘cof’或0：表示文件指针的当前位置</p>
-<p>‘bof’或-1：表示文件的开始位置</p>
-<p>‘eof’或1：表示文件的结束位置</p>
-</li>
-</ul>
-<h5 id="2）ftell"><a href="#2）ftell" class="headerlink" title="2）ftell()"></a>2）ftell()</h5><p>用于查询指针当前位置</p>
-<h5 id="3）feof"><a href="#3）feof" class="headerlink" title="3）feof()"></a>3）feof()</h5><p>用于判断是否达到尾部</p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab基础-9.5其他应用程序调用matlab函数</title>
     <url>/2023/10/25/Matlab/9.5%E5%85%B6%E5%AE%83%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8matlab%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="matlab引擎"><a href="#matlab引擎" class="headerlink" title="matlab引擎"></a>matlab引擎</h1><p>Engine *mep；</p>
@@ -2495,34 +2523,6 @@ sys<span class="token operator">=</span>k<span class="token operator">*</span>u<
 </li>
 </ul>
 <p><img src="/images/matlab/matlab%E5%BC%95%E6%93%8E.png"></p>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlab基础-9.4matlab使用其他程序</title>
-    <url>/2023/10/25/Matlab/9.4matlab%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<h4 id="MEX库函数"><a href="#MEX库函数" class="headerlink" title="MEX库函数"></a>MEX库函数</h4><p>常用MEX库函数</p>
-<ul>
-<li>mexCallMATLAB调用matlab函数</li>
-<li>mexErrMsgTxt用于输出从matlab工作空间获取的运行过程错误信息</li>
-<li>mexEvalString用于在matlab环境中执行表达式</li>
-<li>mexGetVariable用于MEX文件从matlab工作区获取指定变量</li>
-<li>mexPutVariable用于mex文件向matlab工作区输出指定变量</li>
-</ul>
-<p><img src="/images/matlab/MEX%E6%9E%84%E6%88%901.png"></p>
-<p><img src="/images/matlab/MEX%E6%9E%84%E6%88%902.png"></p>
-<h1 id="MEX文件编译"><a href="#MEX文件编译" class="headerlink" title="MEX文件编译"></a>MEX文件编译</h1><ul>
-<li><p>vs</p>
-</li>
-<li><p>matlab编译器</p>
-<p>mex MEXDemo.cpp</p>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Matlab</category>
@@ -2577,6 +2577,229 @@ figure
       <tags>
         <tag>3D打印</tag>
         <tag>SolidWorks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>0 显示器的各项参数</title>
+    <url>/2023/10/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/0%20%E6%98%BE%E7%A4%BA%E5%99%A8%E5%8F%82%E6%95%B0/</url>
+    <content><![CDATA[<p>写在前面，本专题写作目的是为了对计算机硬件购买做一个更全面的了解。最近发现了一台笔记本可以连接3个显示器的新大陆，所以着手购买新的显示器，目前有两个途径：</p>
+<ol>
+<li>使用笔记本电脑配件DIY一个便携式显示器</li>
+<li>直接购买一个便携式显示器</li>
+</ol>
+<p>因为笔者对游戏的需求不高，所以对屏幕的刷新率要求不是很高，但对色彩色域要求比较高。同时，由于原电脑屏幕是15.6寸，并且像素size为1920*1080，因此第三个屏幕再此基础上均衡色彩以及价格。</p>
+<h1 id="1-显示器的尺寸（屏幕大小）"><a href="#1-显示器的尺寸（屏幕大小）" class="headerlink" title="1 显示器的尺寸（屏幕大小）"></a>1 显示器的尺寸（屏幕大小）</h1><p>这里列举了一些显示器常见尺寸：</p>
+<ul>
+<li>笔记本常见为：13寸、15.6寸、17寸</li>
+<li>台式机显示器等笔者需要的时候开坑</li>
+</ul>
+<p>同时,尺寸应该建立一个PPI的概念,即单位英寸下的像素数量.</p>
+<p>这个PPI不是越高越好,当一个11.6英寸的显示器拥有1920*1080的分辨率时,这样的ppi很高,但用在电脑上我们会得到的效果是同样一个窗口放在这块屏幕上之后会显得窗口很小,并且屏幕上的字也过小不清晰. </p>
+<p>手机屏幕上的ppi是越大越好,因为手机系统显示可以无损放大字体,但是国产各个手机厂商的屏幕ppi都大致相近,没有特别明显的视觉观感</p>
+<h1 id="2-显示器的分辨率"><a href="#2-显示器的分辨率" class="headerlink" title="2 显示器的分辨率"></a>2 显示器的分辨率</h1><p>常见视频制作规格为16：9即 1920 * 1080（称为1080P）</p>
+<h2 id="2-1手机屏幕"><a href="#2-1手机屏幕" class="headerlink" title="2.1手机屏幕"></a>2.1手机屏幕</h2><h3 id="2-1-1-手机分辨率"><a href="#2-1-1-手机分辨率" class="headerlink" title="2.1.1 手机分辨率"></a>2.1.1 手机分辨率</h3><p>截至当前2023.11手机厂商对于手机屏幕的定义为：2k、1.5k（1.5k是国产屏幕最近很流行的一个方案，视觉上差距没那么大）</p>
+<p>但是实际上每台手机的比例都不一样，播放视频的时候会根据视频比例来调整屏幕显示的范围，因此不能100%利用全部屏幕。这一点在当前流行的挖孔屏上尤其明显。</p>
+<h4 id="当前厂家对手机的定义为："><a href="#当前厂家对手机的定义为：" class="headerlink" title="当前厂家对手机的定义为："></a>当前厂家对手机的定义为：</h4><table>
+<thead>
+<tr>
+<th align="left">定义</th>
+<th align="left">实际大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">2.5K（不常见）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">2k</td>
+<td align="left">3200*1440</td>
+</tr>
+<tr>
+<td align="left">1.5k</td>
+<td align="left">2772**1240</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-2-手机屏幕其他参数"><a href="#2-1-2-手机屏幕其他参数" class="headerlink" title="2.1.2 手机屏幕其他参数"></a>2.1.2 手机屏幕其他参数</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">作用</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">调光方式</td>
+<td align="left">PWM调光被认为更保护眼睛</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">峰值亮度</td>
+<td align="left">太阳光下更清楚</td>
+<td>1400nits左右</td>
+</tr>
+<tr>
+<td align="left">刷新率</td>
+<td align="left">刷新率越高延迟越小越细腻</td>
+<td>60hz、90hz、120hz、144Hz</td>
+</tr>
+<tr>
+<td align="left">采样率</td>
+<td align="left">手触控时的跟手程度</td>
+<td>2000Hz</td>
+</tr>
+<tr>
+<td align="left">对比度</td>
+<td align="left">黑白颜色的差距</td>
+<td>5,000,000：1</td>
+</tr>
+<tr>
+<td align="left">色彩</td>
+<td align="left">能显示多少种颜色</td>
+<td>8bit色深、10bit色深（行业常见，10.7亿色）、12bit色深</td>
+</tr>
+<tr>
+<td align="left">色彩饱和度</td>
+<td align="left">后续章节会说</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">色准</td>
+<td align="left">后续章节会说</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>关于色深：HDR标准中10bit是最低配置，电影院和显示器的杜比视界可以达到12bit色深，颜色过渡很丝滑。</p>
+<h3 id="2-1-3-手机屏幕品牌"><a href="#2-1-3-手机屏幕品牌" class="headerlink" title="2.1.3 手机屏幕品牌"></a>2.1.3 手机屏幕品牌</h3><h4 id="三星"><a href="#三星" class="headerlink" title="三星"></a>三星</h4><p>我们认为三星屏幕的色彩是最好的. (OLED)</p>
+<p>三星对屏幕有一个分级,一般买手机如果是三星屏幕都会在自己的宣传页里表明.即e4-e7</p>
+<p>数字越高越好.</p>
+<h4 id="国产"><a href="#国产" class="headerlink" title="国产"></a>国产</h4><p>近期国产崛起,较为中低端的手机喜欢用:天马屏 或 京东方的屏幕</p>
+<h2 id="2-2-色域和色准"><a href="#2-2-色域和色准" class="headerlink" title="2.2 色域和色准"></a>2.2 色域和色准</h2><h3 id="2-2-1-色域"><a href="#2-2-1-色域" class="headerlink" title="2.2.1 色域"></a>2.2.1 色域</h3><p>CIE色彩空间：人眼可以识别的全部颜色，形似马蹄</p>
+<p>往往，显示器不能完美地显示出来人眼能接受的颜色，但是可以用一个名为“色域”的参数衡量一个显示器到底能显示出来的多少颜色。（色域，即：颜色丰富度）</p>
+<p>色彩空间（不同颜色标准）：人为为了行业规范规定的CIE色域中的一部分。</p>
+<h4 id="常见的的色彩空间："><a href="#常见的的色彩空间：" class="headerlink" title="常见的的色彩空间："></a>常见的的色彩空间：</h4><table>
+<thead>
+<tr>
+<th align="left">色彩空间</th>
+<th align="left">特点</th>
+<th>显示器参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sRGB</td>
+<td align="left"></td>
+<td>99%RGB</td>
+</tr>
+<tr>
+<td align="left">NTSC</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">Adobe RGB</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">DCI-P3</td>
+<td align="left"></td>
+<td>95%DCI-P3</td>
+</tr>
+</tbody></table>
+<p>实际上：100%sRGB 比 95%DCI-P3 差一些，实际上100%sRGB = 79.6%的DCI-P3色域</p>
+<p>但色域广不一定最好，涉及到色彩管理，因此认为：100%sRGB显示器可以得到最好的体验</p>
+<h3 id="2-2-2-色准"><a href="#2-2-2-色准" class="headerlink" title="2.2.2 色准"></a>2.2.2 色准</h3><p>色准用于衡量显示器在色域范围内显示颜色的准确度。</p>
+<p>衡量色准的参数为：</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.09ex;" xmlns="http://www.w3.org/2000/svg" width="9.522ex" height="1.71ex" role="img" focusable="false" viewBox="0 -716 4208.6 756"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></g><g data-mml-node="mi" transform="translate(833,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="mo" transform="translate(1874.8,0)"><path data-c="3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></g><g data-mml-node="mn" transform="translate(2930.6,0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(778,0)"></path></g></g></g></svg></mjx-container></p>
+<p>这个参数越小越好,一般参考平均和最大ΔE.(后期可以使用显示器校色仪给显示器校准颜色,校色仪生成icc校色文件,把该文件导入系统之中)</p>
+<p>什么样的色准才是比较好的呢:</p>
+<table>
+<thead>
+<tr>
+<th align="left">色准ΔE</th>
+<th align="left">评价</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1.5</td>
+<td align="left">物理上几乎不存在色偏</td>
+<td>特别贵</td>
+</tr>
+<tr>
+<td align="left">1.5-3</td>
+<td align="left">专业人士肉眼看不出来色偏</td>
+<td>高端绘图显示器</td>
+</tr>
+<tr>
+<td align="left">3-5</td>
+<td align="left">优秀,日常使用不受到影响</td>
+<td>中高端显示器和高价位电竞屏</td>
+</tr>
+<tr>
+<td align="left">5-8</td>
+<td align="left">普通色彩敏感的人可以看出来色偏</td>
+<td>平价显示器和中端144hz电竞屏,不建议拿来作图调色</td>
+</tr>
+<tr>
+<td align="left">大于8</td>
+<td align="left">大部分人能看出来偏色</td>
+<td>很差</td>
+</tr>
+</tbody></table>
+<h1 id="3-屏幕发光材料以及屏幕的类型"><a href="#3-屏幕发光材料以及屏幕的类型" class="headerlink" title="3 屏幕发光材料以及屏幕的类型"></a>3 屏幕发光材料以及屏幕的类型</h1><ul>
+<li><p>LCD液晶</p>
+<p>LCD屏幕中常见一款:IPS,这一类屏幕的特点是,色彩亮度没有那么高,但胜在不会烧屏\耐用性好.</p>
+</li>
+<li><p>OLED屏幕</p>
+<p>OLED种类繁多,最近手机屏幕领域AMOLED材料应用比较多,这一类屏幕有一个特点,容易烧屏</p>
+<ul>
+<li>其中AMOLED屏幕效果更好,对比度更好,但是更容易烧瓶</li>
+<li>此外国产oled屏幕有一个缺点,在低亮度下,可以看到肉眼可见的”脏”的感觉,即在纯黑且低亮度的条件下,可以看到一块亮一点一块暗一点的观感</li>
+</ul>
+</li>
+<li><p>两种屏幕作比较:</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">OLED</th>
+<th>IPS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">对比度</td>
+<td align="left">o</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">色彩表现</td>
+<td align="left">o</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">响应速度</td>
+<td align="left">o</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">视角</td>
+<td align="left"></td>
+<td>o</td>
+</tr>
+<tr>
+<td align="left">寿命</td>
+<td align="left"></td>
+<td>o</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机硬件</category>
+      </categories>
+      <tags>
+        <tag>显示器参数</tag>
       </tags>
   </entry>
 </search>
