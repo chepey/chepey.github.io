@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="Chepey"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://chepey.github.io/2024/01/26/嵌入式/esp32s3/外设api/3 通用定时器/"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="通用定时器简介通用定时器是 ESP32-S3 定时器组外设的驱动程序 定时器报警：定时器内部计数器达到特定目标数值的行为 定时器回调函数：定时器报警时将调用用户注册的不同定时器回调函数 通用定时器通常在以下场景中使用：  如同挂钟一般自由运行，随时随地获取高分辨率时间戳； 生成周期性警报，定期触发事件； 生成一次性警报，在目标时间内响应。  功能概述下文介绍了配置和操作定时器的常规步骤：  资源分"><meta property="og:type" content="article"><meta property="og:title" content="3 通用定时器"><meta property="og:url" content="http://chepey.github.io/2024/01/26/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32S3/%E5%A4%96%E8%AE%BEAPI/3%20%E9%80%9A%E7%94%A8%E5%AE%9A%E6%97%B6%E5%99%A8/index.html"><meta property="og:site_name" content="Welcome to Chepey&#39;s Blog"><meta property="og:description" content="通用定时器简介通用定时器是 ESP32-S3 定时器组外设的驱动程序 定时器报警：定时器内部计数器达到特定目标数值的行为 定时器回调函数：定时器报警时将调用用户注册的不同定时器回调函数 通用定时器通常在以下场景中使用：  如同挂钟一般自由运行，随时随地获取高分辨率时间戳； 生成周期性警报，定期触发事件； 生成一次性警报，在目标时间内响应。  功能概述下文介绍了配置和操作定时器的常规步骤：  资源分"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2024-01-26T06:52:00.000Z"><meta property="article:modified_time" content="2024-01-26T09:30:06.194Z"><meta property="article:author" content="chepey"><meta property="article:tag" content="ESP32"><meta property="article:tag" content="ESP-IDF"><meta name="twitter:card" content="summary"><link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/favicon.png"><title>3 通用定时器 - Chepey&#39;s Blog</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/assets/build/styles.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><script id="hexo-configurations">window.config={hostname:"chepey.github.io",root:"/",language:"zh-CN",path:"search.xml"},window.theme={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!1,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:"#1b143e"},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!0},scroll_progress:{bar:!0,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/bk2.jpg",dark:"/images/bk2.jpg"},title:"Welcome to Chepey's Blog",subtitle:{text:["3D打印","嵌入式开发","DIY","二次元","etc"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#1b143e",dark:"#1b143e"},text_style:{title_size:"3.7rem",subtitle_size:"2.5rem",line_height:1.2},custom_font:{enable:!1,family:null,url:null},social_links:{enable:!1,links:{github:null,instagram:null,zhihu:null,twitter:null,email:null},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!1,type:"fixed",audios:[{name:null,artist:null,url:null,cover:null}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.5.0",navbar:{auto_hide:!1,color:{left:"#332847",right:"#af6e79",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"档案":{path:"/archives",icon:"fa-regular fa-archive"},"目录":{path:"/categories",icon:"fa-regular fa-folder"},"标签":{path:"/tags",icon:"fa-regular fa-tags"}},search:{enable:!0,preload:!0}},page_templates:{friends_column:2,tags_style:"blur"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:null,links:{"档案":{path:"/archives",icon:"fa-regular fa-archive"},"目录":{path:"/categories",icon:"fa-regular fa-folder"},"标签":{path:"/tags",icon:"fa-regular fa-tags"}}},article_date_format:"auto",categories:{enable:!0,limit:5},tags:{enable:!0,limit:5}},footerStart:"2023/10/25 13:02:00"},window.lang_ago={second:"%s 秒前",minute:"%s 分钟前",hour:"%s 小时前",day:"%s 天前",week:"%s 周前",month:"%s 个月前",year:"%s 年前"},window.data={masonry:!1}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/favicon.png"> </a><a class="logo-title" href="/">Chepey&#39;s Blog</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> 档案</a></li><li class="navbar-item"><a href="/categories"><i class="fa-regular fa-folder"></i> 目录</a></li><li class="navbar-item"><a href="/tags"><i class="fa-regular fa-tags"></i> 标签</a></li><li class="navbar-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color"><ul class="drawer-navbar-list flex flex-col justify-start items-center"><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/"><i class="fa-regular fa-house"></i> 首页</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/archives"><i class="fa-regular fa-archive"></i> 档案</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/categories"><i class="fa-regular fa-folder"></i> 目录</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/tags"><i class="fa-regular fa-tags"></i> 标签</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><h1 class="article-title-regular">3 通用定时器</h1></div><div class="article-header flex flex-row gap-2 items-center"><div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]"><img src="/images/avatar.jpg"></div><div class="info flex flex-col justify-between"><div class="author flex items-center"><span class="name text-default-text-color text-lg font-semibold">Chepey</span> <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2024-01-26 14:52</span> <span class="mobile">2024-01-26 14:52</span> <span class="hover-info">创建</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2024-01-26 17:30:06</span> <span class="mobile">2024-01-26 17:30:06</span> <span class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>&nbsp;</li><li>></li><li><a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32S3/">ESP32S3</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/ESP32/">ESP32</a>&nbsp;</li><li>| <a href="/tags/ESP-IDF/">ESP-IDF</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.1k 字</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>12 分钟</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="通用定时器"><a href="#通用定时器" class="headerlink" title="通用定时器"></a>通用定时器</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>通用定时器是 ESP32-S3 定时器组外设的驱动程序</p><p>定时器报警：定时器内部计数器达到特定目标数值的行为</p><p>定时器回调函数：定时器报警时将调用用户注册的不同定时器回调函数</p><p>通用定时器通常在以下场景中使用：</p><ul><li>如同挂钟一般自由运行，随时随地获取高分辨率时间戳；</li><li>生成周期性警报，定期触发事件；</li><li>生成一次性警报，在目标时间内响应。</li></ul><h2 id="功能概述"><a href="#功能概述" class="headerlink" title="功能概述"></a>功能概述</h2><p>下文介绍了配置和操作定时器的常规步骤：</p><ul><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-resource-allocation">资源分配 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 获取定时器句柄应设置的参数，以及如何在通用定时器完成工作时回收资源。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#set-and-get-count-value">设置和获取计数值 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 如何强制定时器从起点开始计数，以及如何随时获取计数值。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#set-up-alarm-action">设置警报动作 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 启动警报事件应设置的参数。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-register-event-callbacks">注册事件回调函数 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 如何将用户的特定代码挂载到警报事件回调函数。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#enable-and-disable-timer">使能和禁用定时器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 如何使能和禁用定时器。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#start-and-stop-timer">启动和停止定时器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 通过不同报警行为启动定时器的典型使用场景。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-power-management">电源管理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 选择不同的时钟源将会如何影响功耗。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-iram-safe">IRAM 安全 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 在 cache 禁用的情况下，如何更好地让定时器处理中断事务以及实现 IO 控制功能。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-thread-safety">线程安全 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 驱动程序保证哪些 API 线程安全。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-kconfig-options">Kconfig 选项 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> - 支持的 Kconfig 选项，这些选项会对驱动程序行为产生不同影响。</li></ul><h2 id="资源分配"><a href="#资源分配" class="headerlink" title="资源分配"></a>资源分配</h2><ul><li>ESP32定时器结构<ul><li>定时器组1<ul><li>独立定时器1</li><li>独立定时器n</li></ul></li><li>定时器组n<ul><li>独立定时器1</li><li>独立定时器n</li></ul></li></ul></li></ul><p>定时器的调用的硬件部分会被后台驱动在资源池里自动管理，因此整个调用流程被抽象成了一套安装流程。</p><h3 id="配置结构体"><a href="#配置结构体" class="headerlink" title="配置结构体"></a>配置结构体</h3><ul><li><p><code>gptimer_config_t</code></p><ul><li><p><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N16gptimer_config_t7clk_srcE"><code>gptimer_config_t::clk_src</code></a> 选择定时器的时钟源。仅可选择一个<a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv422gptimer_clock_source_t"><code>gptimer_clock_source_t</code></a> 中列出的可用时钟。了解不同时钟源对功耗的影响，请查看章节 <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-power-management">电源管理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p></li><li><p><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N16gptimer_config_t9directionE"><code>gptimer_config_t::direction</code></a> 设置定时器的计数方向，仅可选择一个<a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv425gptimer_count_direction_t"><code>gptimer_count_direction_t</code></a> 中列出的支持的方向。</p></li><li><p><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N16gptimer_config_t13resolution_hzE"><code>gptimer_config_t::resolution_hz</code></a> 设置内部计数器的分辨率。计数器每滴答一次相当于 <strong>1 / resolution_hz</strong> 秒。</p></li><li><p><code>gptimer_config::intr_priority</code> 设置中断的优先级。如果设置为 <code>0</code>，则会分配一个默认优先级的中断，否则会使用指定的优先级。</p></li><li><p>选用 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N16gptimer_config_t11intr_sharedE"><code>gptimer_config_t::intr_shared</code></a> 设置是否将定时器中断源标记为共享源。了解共享中断的优缺点，请参考 <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/system/intr_alloc.html">Interrupt Handling <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p></li></ul></li></ul><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td><code>gptimer_new_timer()</code></td><td>创建实例</td></tr><tr><td><code>gptimer_del_timer()</code></td><td>回收定时器</td></tr><tr><td><code>gptimer_disable()</code></td><td>禁用定时器</td></tr><tr><td><code>gptimer_enable()</code></td><td>使能定时器</td></tr></tbody></table><h2 id="设置和获取计数值"><a href="#设置和获取计数值" class="headerlink" title="设置和获取计数值"></a>设置和获取计数值</h2><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td><code>gptimer_set_raw_count()</code></td><td>计数值异步更新</td></tr><tr><td>`gptimer_get_raw_couhuoqu</td><td>获取计数值</td></tr></tbody></table><h2 id="设置警报动作"><a href="#设置警报动作" class="headerlink" title="设置警报动作"></a>设置警报动作</h2><h3 id="配置结构体-1"><a href="#配置结构体-1" class="headerlink" title="配置结构体"></a>配置结构体</h3><ul><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv422gptimer_alarm_config_t"><code>gptimer_alarm_config_t</code></a><ul><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t11alarm_countE"><code>gptimer_alarm_config_t::alarm_count</code></a> 设计触发警报事件的计数器目标值（比较寄存器的值），需要考虑计数方向<ul><li>当 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t20auto_reload_on_alarmE"><code>gptimer_alarm_config_t::auto_reload_on_alarm</code></a> 为 true 时，<code>alarm_count</code>与<code>reload_count</code>不能设置为相同的值</li></ul></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t12reload_countE"><code>gptimer_alarm_config_t::reload_count</code></a>代表警报事件发生时要重载的计数值。此配置仅在 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t20auto_reload_on_alarmE"><code>gptimer_alarm_config_t::auto_reload_on_alarm</code></a> 设置为 true 时生效。</li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t20auto_reload_on_alarmE"><code>gptimer_alarm_config_t::auto_reload_on_alarm</code></a> 标志设置是否使能自动重载功能。如果使能，硬件定时器将在警报事件发生时立即将 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv4N22gptimer_alarm_config_t12reload_countE"><code>gptimer_alarm_config_t::reload_count</code></a> 的值重载到计数器中。</li></ul></li></ul><p>如果自动重载生效时，系统计数器将从reload_count向alarm_count计数。</p><h3 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h3><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td><code>gptimer_set_alarm_action()</code></td><td>使警报配置生效</td></tr></tbody></table><p>当<code>gptimer_alarm_config_t</code>=Null时，报警功能被禁用。</p><h2 id="注册事件回调函数"><a href="#注册事件回调函数" class="headerlink" title="注册事件回调函数"></a>注册事件回调函数</h2><table><thead><tr><th>函数</th><th>参数</th><th>功能</th></tr></thead><tbody><tr><td>`gptimer_set_alarm_action()</td><td>ALL</td><td>将函数挂载到中断服务例程 (ISR)</td></tr><tr><td></td><td>user_data</td><td>将自己的上下文保存到 <code>gptimer_register_event_callbacks()</code>中</td></tr></tbody></table><p>注意，要在定时<a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv414gptimer_enable16gptimer_handle_t"><code>gptimer_enable()</code></a>之前注册事件回调函数</p><h2 id="使能和禁用定时器"><a href="#使能和禁用定时器" class="headerlink" title="使能和禁用定时器"></a>使能和禁用定时器</h2><p>对定时器IO控制之前要先调用<code>gptimer_enable()</code></p><ul><li>此函数将把定时器驱动程序的状态从 <strong>init</strong> 切换为 <strong>enable</strong>。</li><li>如果 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv432gptimer_register_event_callbacks16gptimer_handle_tPK25gptimer_event_callbacks_tPv"><code>gptimer_register_event_callbacks()</code></a> 已经延迟安装中断服务，此函数将使能中断服务。</li><li>如果选择了特定的时钟源（例如 APB 时钟），此函数将获取适当的电源管理锁。</li></ul><p>同时<code>gptimer_disable</code>会进行相反的操作，即将定时器驱动程序恢复到 <strong>init</strong> 状态，禁用中断服务并释放电源管理锁。</p><h2 id="启动和停止定时器"><a href="#启动和停止定时器" class="headerlink" title="启动和停止定时器"></a>启动和停止定时器</h2><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td><code>gptimer_start()</code></td><td>使内部计数器开始工作</td></tr><tr><td><code>gptimer_stop()</code></td><td>使计数器停止工作</td></tr></tbody></table><p>需要确保start和stop成对使用，不然会报错</p><h3 id="将定时器作为挂钟启动（无回调函数）"><a href="#将定时器作为挂钟启动（无回调函数）" class="headerlink" title="将定时器作为挂钟启动（无回调函数）"></a>将定时器作为挂钟启动（无回调函数）</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ESP_ERROR_CHECK(gptimer_enable(gptimer));//使能定时器
+ESP_ERROR_CHECK(gptimer_start(gptimer));//开始定时器
+// Retrieve the timestamp at anytime
+uint64_t count;
+ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer, &amp;count));//获取定时器的值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="触发周期性事件（有回调函数）"><a href="#触发周期性事件（有回调函数）" class="headerlink" title="触发周期性事件（有回调函数）"></a>触发周期性事件（有回调函数）</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct {
+    uint64_t event_count;
+} example_queue_element_t;
+
+//创建自定义的回调函数
+static bool example_timer_on_alarm_cb(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_ctx)
+{
+    BaseType_t high_task_awoken = pdFALSE;
+    QueueHandle_t queue = (QueueHandle_t)user_ctx;
+    // 从事件数据中恢复计数值
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    // 可选: 通过os队列发送时间数据到其他task中
+    // 不要早回调中使用复杂的逻辑
+    // 建议在主循环中处理事件数据
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 返回是否需要在ISR结束时让步
+    return high_task_awoken == pdTRUE;
+}
+
+//创建定时器资源结构体
+gptimer_alarm_config_t alarm_config = {
+    .reload_count = 0, // 警报时间是1s，计数器重载为0
+    .alarm_count = 1000000, // 周期为1s @resolution 1MHz
+    .flags.auto_reload_on_alarm = true, // 自动重载
+};
+ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config));//注册定时器
+
+gptimer_event_callbacks_t cbs = {
+    .on_alarm = example_timer_on_alarm_cb, // 注册的回调函数名儿
+};
+ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));//注册回调函数
+ESP_ERROR_CHECK(gptimer_enable(gptimer));//使能定时器
+ESP_ERROR_CHECK(gptimer_start(gptimer));//开始定时<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="触发一次性事件（回调函数调用一次）"><a href="#触发一次性事件（回调函数调用一次）" class="headerlink" title="触发一次性事件（回调函数调用一次）"></a>触发一次性事件（回调函数调用一次）</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct {
+    uint64_t event_count;
+} example_queue_element_t;
+
+static bool example_timer_on_alarm_cb(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_ctx)
+{
+    BaseType_t high_task_awoken = pdFALSE;
+    QueueHandle_t queue = (QueueHandle_t)user_ctx;
+    // 越早停定时器越好
+    gptimer_stop(timer);
+    // 从事件数据中恢复计数值
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    // 可选: 通过os队列发送时间数据到其他task中
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 返回是否需要在ISR结束时让步
+    return high_task_awoken == pdTRUE;
+}
+
+gptimer_alarm_config_t alarm_config = {
+    .alarm_count = 1 * 1000 * 1000, // 警报时间是1s @分辨率 1MHz
+};
+ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config));
+
+gptimer_event_callbacks_t cbs = {
+    .on_alarm = example_timer_on_alarm_cb, // register user callback
+};
+ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));
+ESP_ERROR_CHECK(gptimer_enable(gptimer));
+ESP_ERROR_CHECK(gptimer_start(gptimer));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="警报值动态更新"><a href="#警报值动态更新" class="headerlink" title="警报值动态更新"></a>警报值动态更新</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct {
+    uint64_t event_count;
+} example_queue_element_t;
+
+static bool example_timer_on_alarm_cb(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_ctx)
+{
+    BaseType_t high_task_awoken = pdFALSE;
+    QueueHandle_t queue = (QueueHandle_t)user_data;
+    // Retrieve the count value from event data
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    // 可选: 通过os队列发送时间数据到其他task中
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 重新配置警报值
+    gptimer_alarm_config_t alarm_config = {
+        .alarm_count = edata-&gt;alarm_value + 1000000, // alarm in next 1s
+    };
+    gptimer_set_alarm_action(timer, &amp;alarm_config);
+    // 返回是否需要在ISR结束时让步
+    return high_task_awoken == pdTRUE;
+}
+
+gptimer_alarm_config_t alarm_config = {
+    .alarm_count = 1000000, // 警报时间是1s @分辨率 1MHz
+};
+ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config));
+
+gptimer_event_callbacks_t cbs = {
+    .on_alarm = example_timer_on_alarm_cb, // register user callback
+};
+ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));
+ESP_ERROR_CHECK(gptimer_enable(gptimer));
+ESP_ERROR_CHECK(gptimer_start(gptimer, &amp;alarm_config));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><p>有些电源管理的策略会在某些时刻关闭时钟源，或者改变时钟源的频率，以求降低功耗。比如在启用 DFS 后， APB 时钟源会降低频率。如果浅睡眠（light sleep） 模式也被开启， PLL 和 XTAL 时钟都会被默认关闭，从而导致 GPTimer 的计时不准确。</p><p>驱动程序会根据具体的时钟源选择，通过创建不同的电源锁来避免上述情况的发生。驱动会在 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv414gptimer_enable16gptimer_handle_t"><code>gptimer_enable()</code></a> 函数中增加电源锁的引用计数，并在 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv415gptimer_disable16gptimer_handle_t"><code>gptimer_disable()</code></a> 函数中减少电源锁的引用计数，从而保证了在 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv414gptimer_enable16gptimer_handle_t"><code>gptimer_enable()</code></a> 和 <a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv415gptimer_disable16gptimer_handle_t"><code>gptimer_disable()</code></a> 之间， GPTimer 的时钟源始处于稳定工作的状态。</p><h2 id="IRAM安全"><a href="#IRAM安全" class="headerlink" title="IRAM安全"></a>IRAM安全</h2><p>默认情况下，当 cache 因写入或擦除 flash 等原因而被禁用时，通用定时器的中断服务将会延迟，造成警报中断无法及时执行。在实时应用程序中通常需要避免这一情况发生。</p><p>调用 Kconfig 选项 <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-isr-iram-safe">CONFIG_GPTIMER_ISR_IRAM_SAFE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 可实现如下功能：</p><ul><li>即使禁用 cache 也可使能正在运行的中断</li><li>将 ISR 使用的所有函数放入 IRAM <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#id27">2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li><li>将驱动程序对象放入 DRAM（以防意外映射到 PSRAM）</li></ul><p>这将允许中断在 cache 禁用时运行，但会增加 IRAM 使用量。</p><p>调用另一 Kconfig 选项 <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-ctrl-func-in-iram">CONFIG_GPTIMER_CTRL_FUNC_IN_IRAM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 也可将常用的 IO 控制功能放入 IRAM，以便这些函数在 cache 禁用时也能执行。常用的 IO 控制功能如下：</p><ul><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv413gptimer_start16gptimer_handle_t"><code>gptimer_start()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv412gptimer_stop16gptimer_handle_t"><code>gptimer_stop()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv421gptimer_get_raw_count16gptimer_handle_tP8uint64_t"><code>gptimer_get_raw_count()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv421gptimer_set_raw_count16gptimer_handle_t8uint64_t"><code>gptimer_set_raw_count()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv424gptimer_set_alarm_action16gptimer_handle_tPK22gptimer_alarm_config_t"><code>gptimer_set_alarm_action()</code></a></li></ul><h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>驱动提供的所有 API 都是线程安全的，这意味着您可以从不同的 RTOS 任务中调用这些函数，而无需额外的互斥锁去保护。以下这些函数还被允许在中断上下文中运行。</p><ul><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv413gptimer_start16gptimer_handle_t"><code>gptimer_start()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv412gptimer_stop16gptimer_handle_t"><code>gptimer_stop()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv421gptimer_get_raw_count16gptimer_handle_tP8uint64_t"><code>gptimer_get_raw_count()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv421gptimer_set_raw_count16gptimer_handle_t8uint64_t"><code>gptimer_set_raw_count()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv426gptimer_get_captured_count16gptimer_handle_tP8uint64_t"><code>gptimer_get_captured_count()</code></a></li><li><a target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#_CPPv424gptimer_set_alarm_action16gptimer_handle_tPK22gptimer_alarm_config_t"><code>gptimer_set_alarm_action()</code></a></li></ul><h2 id="Kconfig选项"><a href="#Kconfig选项" class="headerlink" title="Kconfig选项"></a>Kconfig选项</h2><ul><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-ctrl-func-in-iram">CONFIG_GPTIMER_CTRL_FUNC_IN_IRAM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 控制着定时器控制函数的存放位置（IRAM 或 flash）。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-isr-handler-in-iram">CONFIG_GPTIMER_ISR_HANDLER_IN_IRAM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 控制着定时器中断处理函数的存放位置（IRAM 或 flash）。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-isr-iram-safe">CONFIG_GPTIMER_ISR_IRAM_SAFE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 控制着中断处理函数是否需要在 cache 关闭的时候被屏蔽掉。更多信息，请参阅 <a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/peripherals/gptimer.html#gptimer-iram-safe">IRAM 安全 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</li><li><a class="link" target="_blank" rel="noopener" href="https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32s3/api-reference/kconfig.html#config-gptimer-enable-debug-log">CONFIG_GPTIMER_ENABLE_DEBUG_LOG <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 用于启用调试日志输出。启用这一选项将增加固件二进制文件大小。</li></ul><h1 id="例程"><a href="#例程" class="headerlink" title="例程"></a>例程</h1><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;stdio.h&gt;
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/queue.h"
+#include "driver/gptimer.h"
+#include "esp_log.h"
+
+static const char *TAG = "example";
+
+//用于存放计数器的值
+typedef struct {
+    uint64_t event_count;
+} example_queue_element_t;
+
+//回调函数1（一次性事件）
+static bool IRAM_ATTR example_timer_on_alarm_cb_v1(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_data)
+{
+    BaseType_t high_task_awoken = pdFALSE;//用于检测错误
+    QueueHandle_t queue = (QueueHandle_t)user_data;//从用户参数中恢复队列句柄
+    // 立刻停止定时器
+    gptimer_stop(timer);
+    // 恢复计数值并发送到队列
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 返回是否需要在ISR结束时让步
+    return (high_task_awoken == pdTRUE);
+}
+
+//回调函数2（周期事件）
+static bool IRAM_ATTR example_timer_on_alarm_cb_v2(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_data)
+{
+    BaseType_t high_task_awoken = pdFALSE;//用于检测错误
+    QueueHandle_t queue = (QueueHandle_t)user_data;//从用户参数中恢复队列句柄
+    // 恢复计数值并发送到队列
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 返回是否需要在ISR结束时让步
+    return (high_task_awoken == pdTRUE);
+}
+
+//回调函数3（报警值动态更新）
+static bool IRAM_ATTR example_timer_on_alarm_cb_v3(gptimer_handle_t timer, const gptimer_alarm_event_data_t *edata, void *user_data)
+{
+    BaseType_t high_task_awoken = pdFALSE;
+    QueueHandle_t queue = (QueueHandle_t)user_data;
+    // 恢复计数值并发送到队列
+    example_queue_element_t ele = {
+        .event_count = edata-&gt;count_value
+    };
+    xQueueSendFromISR(queue, &amp;ele, &amp;high_task_awoken);
+    // 重新设置警报值
+    gptimer_alarm_config_t alarm_config = {
+        .alarm_count = edata-&gt;alarm_value + 1000000, // 在下一秒警报
+    };
+    gptimer_set_alarm_action(timer, &amp;alarm_config);
+    // 返回是否需要在ISR结束时让步
+    return (high_task_awoken == pdTRUE);
+}
+
+//main函数
+void app_main(void)
+{
+    example_queue_element_t ele;
+    QueueHandle_t queue = xQueueCreate(10, sizeof(example_queue_element_t));//创建队列并获得句柄
+    if (!queue) {//错误处理
+        ESP_LOGE(TAG, "Creating queue failed");
+        return;
+    }
+
+    ESP_LOGI(TAG, "Create timer handle");
+    gptimer_handle_t gptimer = NULL;//定时器结构体，用于存放句柄
+    gptimer_config_t timer_config = {//定时器结构体
+        .clk_src = GPTIMER_CLK_SRC_DEFAULT,//定义时钟源
+        .direction = GPTIMER_COUNT_UP,//向上计数
+        .resolution_hz = 1000000, // 分辨率1MHZ, 1 tick=1us，1us记一次数
+    };
+    ESP_ERROR_CHECK(gptimer_new_timer(&amp;timer_config, &amp;gptimer));//创建新定时器，存在gptimer下
+
+    gptimer_event_callbacks_t cbs = {//回调函数结构体
+        .on_alarm = example_timer_on_alarm_cb_v1,
+    };
+    ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));//注册回调函数
+
+    ESP_LOGI(TAG, "Enable timer");
+    ESP_ERROR_CHECK(gptimer_enable(gptimer));//使能定时器
+
+    ESP_LOGI(TAG, "Start timer, stop it at alarm event");//触发一次性事件
+    gptimer_alarm_config_t alarm_config1 = {
+        .alarm_count = 1000000, // period = 1s
+    };
+    ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config1));//重新设置警报时间
+    ESP_ERROR_CHECK(gptimer_start(gptimer));//开启定时器
+    if (xQueueReceive(queue, &amp;ele, pdMS_TO_TICKS(2000))) {
+        ESP_LOGI(TAG, "Timer stopped, count=%llu", ele.event_count);
+    } else {
+        ESP_LOGW(TAG, "Missed one count event");
+    }
+
+    ESP_LOGI(TAG, "Set count value");
+    ESP_ERROR_CHECK(gptimer_set_raw_count(gptimer, 100));
+    ESP_LOGI(TAG, "Get count value");
+    uint64_t count;
+    ESP_ERROR_CHECK(gptimer_get_raw_count(gptimer, &amp;count));
+    ESP_LOGI(TAG, "Timer count value=%llu", count);
+
+    // 再更新回调函数之前，要确保定时器被关闭
+    ESP_LOGI(TAG, "Disable timer");
+    ESP_ERROR_CHECK(gptimer_disable(gptimer));
+    //设置新回调函数
+    cbs.on_alarm = example_timer_on_alarm_cb_v2;
+    ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));
+    ESP_LOGI(TAG, "Enable timer");
+    ESP_ERROR_CHECK(gptimer_enable(gptimer));//使能定时器
+
+    ESP_LOGI(TAG, "Start timer, auto-reload at alarm event");//设置为自动重载定时器
+    gptimer_alarm_config_t alarm_config2 = {
+        .reload_count = 0,
+        .alarm_count = 1000000, // period = 1s
+        .flags.auto_reload_on_alarm = true,
+    };
+    ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config2));
+    ESP_ERROR_CHECK(gptimer_start(gptimer));//开启定时器
+    int record = 4;
+    while (record) {//4次之后关闭进行下一步
+        if (xQueueReceive(queue, &amp;ele, pdMS_TO_TICKS(2000))) {
+            ESP_LOGI(TAG, "Timer reloaded, count=%llu", ele.event_count);
+            record--;
+        } else {
+            ESP_LOGW(TAG, "Missed one count event");
+        }
+    }
+    ESP_LOGI(TAG, "Stop timer");
+    ESP_ERROR_CHECK(gptimer_stop(gptimer));//由于中断中没有停止定时器，因此需要在这里停止
+
+    ESP_LOGI(TAG, "Disable timer");
+    ESP_ERROR_CHECK(gptimer_disable(gptimer));//关闭定时器
+    cbs.on_alarm = example_timer_on_alarm_cb_v3;
+    ESP_ERROR_CHECK(gptimer_register_event_callbacks(gptimer, &amp;cbs, queue));
+    ESP_LOGI(TAG, "Enable timer");
+    ESP_ERROR_CHECK(gptimer_enable(gptimer));
+
+    ESP_LOGI(TAG, "Start timer, update alarm value dynamically");
+    gptimer_alarm_config_t alarm_config3 = {
+        .alarm_count = 1000000, // period = 1s
+    };
+    ESP_ERROR_CHECK(gptimer_set_alarm_action(gptimer, &amp;alarm_config3));
+    ESP_ERROR_CHECK(gptimer_start(gptimer));
+    record = 4;
+    while (record) {
+        if (xQueueReceive(queue, &amp;ele, pdMS_TO_TICKS(2000))) {
+            ESP_LOGI(TAG, "Timer alarmed, count=%llu", ele.event_count);
+            record--;
+        } else {
+            ESP_LOGW(TAG, "Missed one count event");
+        }
+    }
+
+    ESP_LOGI(TAG, "Stop timer");
+    ESP_ERROR_CHECK(gptimer_stop(gptimer));
+    ESP_LOGI(TAG, "Disable timer");
+    ESP_ERROR_CHECK(gptimer_disable(gptimer));
+    ESP_LOGI(TAG, "Delete timer");
+    ESP_ERROR_CHECK(gptimer_del_timer(gptimer));
+
+    vQueueDelete(queue);//删除队列
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>标题:</strong> 3 通用定时器</li><li><strong>作者:</strong> Chepey</li><li><strong>创建于 :</strong> 2024-01-26 14:52:00</li><li><strong>更新于 :</strong> 2024-01-26 17:30:06</li><li><strong>链接:</strong> https://chepey.github.io/2024/01/26/嵌入式/ESP32S3/外设API/3 通用定时器/</li><li><strong>版权声明: </strong>版权所有 &#169 Chepey，禁止转载。</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/ESP32/">#ESP32</a>&nbsp;</li><li class="tag-item"><a href="/tags/ESP-IDF/">#ESP-IDF</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/2024/01/27/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32S3/%E5%A4%96%E8%AE%BEAPI/4%20%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6PWM/"><span class="left arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex justify-center items-center"><span class="post-nav-title-item">4 电机控制PWM</span> <span class="post-nav-item">上一篇</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/2024/01/25/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32S3/%E5%A4%96%E8%AE%BEAPI/2%20GPIO&amp;RTC%20GPIO/"><span class="title flex justify-center items-center"><span class="post-nav-title-item">2 GPIO&amp;RTC GPIO</span> <span class="post-nav-item">下一篇</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">此页目录</div><div class="page-title">3 通用定时器</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">通用定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">功能概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%88%86%E9%85%8D"><span class="nav-number">1.3.</span> <span class="nav-text">资源分配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">配置结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%92%8C%E8%8E%B7%E5%8F%96%E8%AE%A1%E6%95%B0%E5%80%BC"><span class="nav-number">1.4.</span> <span class="nav-text">设置和获取计数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AD%A6%E6%8A%A5%E5%8A%A8%E4%BD%9C"><span class="nav-number">1.5.</span> <span class="nav-text">设置警报动作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84%E4%BD%93-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">配置结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">注册事件回调函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E8%83%BD%E5%92%8C%E7%A6%81%E7%94%A8%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">1.7.</span> <span class="nav-text">使能和禁用定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">1.8.</span> <span class="nav-text">启动和停止定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%9C%E4%B8%BA%E6%8C%82%E9%92%9F%E5%90%AF%E5%8A%A8%EF%BC%88%E6%97%A0%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.8.1.</span> <span class="nav-text">将定时器作为挂钟启动（无回调函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E5%91%A8%E6%9C%9F%E6%80%A7%E4%BA%8B%E4%BB%B6%EF%BC%88%E6%9C%89%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">1.8.2.</span> <span class="nav-text">触发周期性事件（有回调函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BA%8B%E4%BB%B6%EF%BC%88%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E4%B8%80%E6%AC%A1%EF%BC%89"><span class="nav-number">1.8.3.</span> <span class="nav-text">触发一次性事件（回调函数调用一次）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AD%A6%E6%8A%A5%E5%80%BC%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0"><span class="nav-number">1.8.4.</span> <span class="nav-text">警报值动态更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="nav-number">1.9.</span> <span class="nav-text">电源管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IRAM%E5%AE%89%E5%85%A8"><span class="nav-number">1.10.</span> <span class="nav-text">IRAM安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.11.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kconfig%E9%80%89%E9%A1%B9"><span class="nav-number">1.12.</span> <span class="nav-text">Kconfig选项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">例程</span></a></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2023</span> - 2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">Chepey</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">访问人数</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">总访问量</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span> <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span></div><div>博客已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fa-solid fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa-solid fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script src="/js/libs/SwupPreloadPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"}),new SwupPreloadPlugin],containers:["#swup"]})</script><script src="/js/tools/imageViewer.js" type="module"></script><script src="/js/utils.js" type="module"></script><script src="/js/main.js" type="module"></script><script src="/js/layouts/navbarShrink.js" type="module"></script><script src="/js/tools/scrollTopBottom.js" type="module"></script><script src="/js/tools/lightDarkSwitch.js" type="module"></script><script src="/js/layouts/categoryList.js" type="module"></script><script src="/js/tools/localSearch.js" type="module"></script><script src="/js/tools/codeBlock.js" type="module"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js" type="module"></script><div class="post-scripts" data-swup-reload-script><script src="/js/libs/anime.min.js"></script><script src="/js/tools/tocToggle.js" type="module"></script><script src="/js/layouts/toc.js" type="module"></script><script src="/js/plugins/tabs.js" type="module"></script></div></body></html>
